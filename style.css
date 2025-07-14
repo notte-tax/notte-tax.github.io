@@ -81,9 +81,10 @@ body {
     font-size: 0.8em;
     color: #666;
 }
+
 /* お問い合わせボタン */
 .header-cta-button {
-    background-image: linear-gradient(45deg, #24bed5, #1893a8); /* より鮮やかなグラデーションに変更 */
+    background-image: linear-gradient(45deg, #24bed5, #1893a8);
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -91,25 +92,23 @@ body {
     font-weight: bold;
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* ボタンが縮まないようにする */
+    flex-shrink: 0;
     transition: all 0.3s;
 }
 
-/* ▼▼▼【ここから修正】2つに分かれていたものを削除し、これに置き換えてください ▼▼▼ */
 /* ヘッダーのお問い合わせボタン内アイコンのスタイル */
 .header-cta-button .icon-mail {
     width: 18px !important;
     height: 18px !important;
     flex-shrink: 0;
     margin-right: 8px;
-    position: relative; /* 位置調整のため追加 */
-    top: 1px;         /* 1pxだけ下に移動して微調整 */
+    position: relative;
+    top: 1px;
 }
-/* ▲▲▲【ここまで修正】▲▲▲ */
 
 .header-cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-3px); /* animated-cta-buttonと同じ値に揃えます */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* animated-cta-buttonと同じ値に揃えます */
 }
 
 /* ===============
@@ -364,10 +363,12 @@ body {
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease; /* transition を all に変更し、ease を追加 */
 }
 .reason-button:hover {
     background-color: #1893a8;
+    transform: translateY(-3px); /* animated-cta-button と同じ値に揃えます */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* animated-cta-button と同じ値に揃えます */
 }
 
 /* 選ばれる理由セクションのカード内画像スタイル */
@@ -2031,6 +2032,7 @@ html {
 .page-nav-button:hover {
     background-color: #ffffff;
     color: #1caac3;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* 影の値を animated-cta-button に近づけます */
 }
 
 /* =====【追加】シミュレーター間の区切り線のスタイル ===== */
@@ -4029,4 +4031,43 @@ html {
 }
 .page-staff .page-header {
     background-image: url('staff.jpg');
+}
+
+/* 新しい戻るボタンのスタイル */
+.back-to-recruit-button {
+    display: inline-flex; /* Flexboxを使って内容を中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 水平方向の中央揃え */
+    padding: 10px 25px; /* 上下左右のパディングを調整 */
+    background: linear-gradient(to right, #00BCD4, #0d8b99); /* 背景グラデーション */
+    color: white; /* テキストの色 */
+    font-size: 1rem; /* フォントサイズを調整 */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* 丸みを帯びた角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影 */
+    transition: all 0.3s ease; /* ホバー時のアニメーション */
+    white-space: nowrap; /* テキストが改行されないように */
+    margin-top: 30px; /* 上のテキストとの間隔を調整 */
+    cursor: pointer;
+}
+
+.back-to-recruit-button:hover {
+    transform: translateY(-2px); /* 少し上に浮き上がるアニメーション */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-recruit-button .arrow-icon {
+    display: inline-block;
+    width: 10px; /* 矢印の幅 */
+    height: 10px; /* 矢印の高さ */
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg); /* 矢印の向き */
+    margin-left: 8px; /* テキストと矢印の間隔 */
+    transition: transform 0.3s ease;
+}
+
+.back-to-recruit-button:hover .arrow-icon {
+    transform: translateX(3px) rotate(45deg); /* ホバー時に少し移動 */
 }

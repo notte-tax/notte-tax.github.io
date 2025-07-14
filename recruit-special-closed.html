@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夏季休業に関するご案内 - 税理士法人notte</title>
+    <title>税理士法人notte - 求人特設サイト（現在募集しておりません）</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" type="image/png">
 
-    <meta property="og:url" content="https://notte-tax-website.web.app/news.html" />
+    <meta property="og:url" content="https://notte-tax-website.web.app/recruit-special-closed.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="お知らせ - 税理士法人notte" />
-    <meta property="og:description" content="税理士法人notteからのお知らせ一覧です。" />
+    <meta property="og:title" content="税理士法人notte - 求人特設サイト（現在募集しておりません）" />
+    <meta property="og:description" content="税理士法人notteの求人特設サイトです。現在、スタッフの募集は行っておりません。" />
     <meta property="og:site_name" content="税理士法人notte" />
     <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
     
     <meta name="twitter:card" content="summary_large_image" />
 </head>
-<body>
+<body class="page-recruit-special-closed">
+
     <header class="header">
         <div class="header-inner">
             <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
@@ -50,6 +51,7 @@
             </div>
         </div>
     </header>
+
     <div class="sticky-header-container">
         <nav class="global-nav" id="global-nav">
             <ul>
@@ -74,29 +76,22 @@
     </div>
 
     <main>
+        <div class="page-header">
+            <h1>求人特設サイト</h1>
+        </div>
+
         <div class="page-content">
-            <article>
-                <div class="news-article-header fade-in fade-in-up">
-                    <h1>夏季休業に関するご案内</h1>
-                    <p class="news-date">2025年7月15日</p>
+            <div class="recruitment-notice">
+                <p>現在、スタッフの募集は行っておりません。<br>募集を再開する際には、当ホームページにてお知らせいたします。</p>
+                <div style="text-align: center;"> <a href="recruit.html" class="back-to-recruit-button">
+                        <span>採用情報ページに戻る</span>
+                        <span class="arrow-icon"></span>
+                    </a>
                 </div>
-                <div class="news-body fade-in fade-in-up">
-                    <p>平素は格別のご高配を賜り、厚く御礼申し上げます。</p>
-                    <p>誠に勝手ながら、当事務所では下記の期間を夏季休業とさせていただきます。</p>
-                    <h2>休業期間</h2>
-                    <p><strong>2025年8月13日（水）～ 2025年8月15日（金）</strong></p>
-                    <p>2025年8月18日（月）より、通常通り営業いたします。</p>
-                    <p>休業期間中にいただきましたお問い合わせにつきましては、8月18日（月）以降、順次対応させていただきます。</p>
-                    <p>皆様には大変ご不便をおかけいたしますが、何卒ご理解のほどお願い申し上げます。</p>
-                    <div class="article-back-link-container">
-                        <a href="news.html" class="reason-button">お知らせ一覧へ戻る</a>
-                    </div>
-                </div>
-            </article>
+            </div>
         </div>
     </main>
-
-
+    
     <section class="pre-footer-contact-section fade-in fade-in-up">
         <div class="pre-footer-wrapper">
             <div class="pre-footer-col">
@@ -154,50 +149,68 @@
     <a href="#" id="page-top-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
     </a>
-    <script>
+<script>
+    // --- ハンバーガーメニューの制御 ---
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const globalNav = document.getElementById('global-nav');
 
-        // --- ハンバーガーメニューの制御 ---
-        const hamburgerButton = document.getElementById('hamburger-button');
-        const globalNav = document.getElementById('global-nav');
-    
-        if (hamburgerButton && globalNav) {
-            hamburgerButton.addEventListener('click', () => {
-                hamburgerButton.classList.toggle('is-active');
-                globalNav.classList.toggle('is-open');
-            });
-        }
-    
-// --- 追従ボタンの表示・非表示を制御 ---
-const sideButtons = document.querySelector('.side-sticky-buttons');
-const pageTopButton = document.getElementById('page-top-button');
-const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper'); // ★IDを新しいものに変更
-const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close'); // ★閉じるボタンを取得
+    if (hamburgerButton && globalNav) {
+        hamburgerButton.addEventListener('click', () => {
+            hamburgerButton.classList.toggle('is-active');
+            globalNav.classList.toggle('is-open');
+        });
+    }
 
-// 正しいラッパー（priceCtaWrapper）を条件に追加
-if (sideButtons && pageTopButton && priceCtaWrapper) { 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            sideButtons.classList.add('show');
-            pageTopButton.classList.add('show');
-            priceCtaWrapper.classList.add('show');
-        } else {
-            sideButtons.classList.remove('show');
-            pageTopButton.classList.remove('show');
-            priceCtaWrapper.classList.remove('show');
-        }
-    });
-    pageTopButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
+    // --- 追従ボタンの表示・非表示を制御（トップページと下層ページで条件を変更） ---
+    const sideButtons = document.querySelector('.side-sticky-buttons');
+    const pageTopButton = document.getElementById('page-top-button');
+    const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper');
+    const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close');
 
-// ★【追加】閉じるボタンのクリック処理
-if(priceCtaCloseBtn && priceCtaWrapper) {
-    priceCtaCloseBtn.addEventListener('click', () => {
-        priceCtaWrapper.style.display = 'none'; // ボタンのラッパーごと非表示にする
-    });
-}
+    if (sideButtons && pageTopButton && priceCtaWrapper) {
+        // hero要素を取得（トップページにのみ存在）
+        const heroElement = document.querySelector('.hero');
+
+        const scrollListener = () => {
+            let triggerHeight;
+
+            // hero要素があれば（=トップページの場合）、その高さを基準にする
+            if (heroElement) {
+                // ヒーローエリアの高さから、少し手前で表示されるよう調整
+                triggerHeight = heroElement.offsetHeight + 200;
+            } else {
+                // それ以外のページでは、これまで通り100pxを基準にする
+                triggerHeight = 100;
+            }
+
+            // 基準の高さを超えたらボタンを表示
+            if (window.scrollY > triggerHeight) {
+                sideButtons.classList.add('show');
+                pageTopButton.classList.add('show');
+                priceCtaWrapper.classList.add('show');
+            } else {
+                sideButtons.classList.remove('show');
+                pageTopButton.classList.remove('show');
+                priceCtaWrapper.classList.remove('show');
+            }
+        };
+
+        window.addEventListener('scroll', scrollListener);
+
+        // トップへ戻るボタンのクリックイベント
+        pageTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+
+    // 【追加】閉じるボタンのクリック処理
+    if (priceCtaCloseBtn && priceCtaWrapper) {
+        priceCtaCloseBtn.addEventListener('click', () => {
+            priceCtaWrapper.style.display = 'none'; // ボタンのラッパーごと非表示にする
+        });
+    }
 
     /* --- スクロールアニメーションの制御 --- */
     const fadeInTargets = document.querySelectorAll('.fade-in');
@@ -217,7 +230,74 @@ if(priceCtaCloseBtn && priceCtaWrapper) {
             observer.observe(target);
         });
     }
+
+    /* =====【最新版】動く三角形付きタブの制御 ===== */
+    const featureTabsContainer = document.querySelector('.feature-tabs');
+    if (featureTabsContainer) {
+        const tabButtons = featureTabsContainer.querySelectorAll('.feature-tab-button');
+        const contentPanes = document.querySelectorAll('.feature-content-pane');
+        const triangle = document.getElementById('tab-triangle');
+
+        // 三角形の位置を計算して移動させる関数
+        const moveTriangle = (targetButton) => {
+            if (!targetButton || !triangle) return;
+
+            // 親コンテナの位置情報を取得
+            const containerRect = featureTabsContainer.getBoundingClientRect();
+            // クリックされたボタンの位置情報を取得
+            const buttonRect = targetButton.getBoundingClientRect();
+
+            // コンテナの左端からボタンの中心までの距離を計算
+            const buttonCenter = (buttonRect.left - containerRect.left) + (buttonRect.width / 2);
+
+            // 三角形の中心をボタンの中心に合わせる
+            // 10pxは三角形の横幅(20px)の半分
+            triangle.style.left = `${buttonCenter - 10}px`;
+        };
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 他のボタンのアクティブ状態を解除
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                contentPanes.forEach(pane => pane.classList.remove('active'));
+
+                // クリックされたボタンと対応するパネルをアクティブに
+                button.classList.add('active');
+                const targetPane = document.getElementById(button.dataset.tab);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+
+                // 三角形を移動
+                moveTriangle(button);
+            });
+        });
+
+        // ページ読み込み時に、最初のアクティブなタブに三角形を配置
+        const initialActiveButton = featureTabsContainer.querySelector('.feature-tab-button.active');
+        moveTriangle(initialActiveButton);
+    }
+    
+    /* --- この部分をコメントアウトします ---
+    // --- ヒーローテキストのパララックス効果 ---
+    const heroTextWrapper = document.querySelector('.hero-text-wrapper');
+    const heroSection = document.querySelector('.hero');
+
+    if (heroTextWrapper && heroSection) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const heroHeight = heroSection.offsetHeight;
+            const scrollFactor = 1.0; 
+
+            if (scrollY < heroHeight) {
+                heroTextWrapper.style.transform = `translateY(${scrollY * scrollFactor}px)`;
+            } else {
+                heroTextWrapper.style.transform = `translateY(${heroHeight * scrollFactor}px)`;
+            }
+        });
+    }
+    */
 </script>
 
 </body>
-/html>
+</html>
