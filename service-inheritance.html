@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相続税サポート｜税理士法人notte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+<style>
+    .service-choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        margin: 80px 0;
+        margin-bottom: 0; /* 下のセクションとの余白を調整 */
+    }
+    .choice-card {
+        position: relative;
+        padding: 65px 30px 40px 30px;
+        background-color: #ffffff;
+        border: 2px solid #e8e8e8;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .choice-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    }
+
+    /* アイコン（絵文字）のスタイル */
+    .choice-card-icon {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #e8e8e8;
+        font-size: 40px; /* 絵文字のサイズをフォントサイズで指定 */
+        line-height: 1;
+    }
+    
+    /* テキスト部分のスタイル */
+    .choice-card-text {
+        text-align: center;
+    }
+    .choice-card-text h3 {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #333;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .choice-card:hover .choice-card-text h3 {
+        color: #1caac3;
+    }
+    .choice-card-text p {
+        margin: 0;
+        line-height: 1.8;
+        color: #555;
+        font-size: 0.95em;
+    }
+
+    /* ホバー時に表示される指さしマークのスタイル */
+    .choice-card .arrow {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s;
+        margin-left: 10px;
+        font-size: 1.2em;
+        font-weight: normal;
+        line-height: 1;
+    }
+    .choice-card:hover .arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* スマホ表示対応 */
+    @media (max-width: 768px) {
+        .service-choice-grid { 
+            grid-template-columns: 1fr; 
+            gap: 60px;
+        }
+    }
+    /* ▼▼▼ このスタイルを追記 ▼▼▼ */
+.service-feature-numbered {
+    padding: 60px 0;
+}
+.feature-numbered-list {
+    max-width: 900px;
+    margin: 50px auto 0 auto;
+}
+.feature-numbered-item {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.feature-numbered-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.item-number {
+    flex-shrink: 0;
+    font-size: 4em;
+    font-weight: 900;
+    color: #1caac3;
+    opacity: 0.15;
+    line-height: 1;
+}
+.item-text h4 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.item-text p {
+    margin: 0;
+    line-height: 1.9;
+    font-size: 1.05em;
+}
+
+@media (max-width: 768px) {
+    .feature-numbered-item {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+    .item-text p {
+        text-align: left;
+    }
+}
+/* ▼▼▼ このスタイルを修正・適用 ▼▼▼ */
+    /* 最初のセクションを除く、すべてのセクションの上部に線と余白を追加 */
+    .page-content > section:not(:first-child) {
+        margin-top: 80px;
+        padding-top: 60px;
+        border-top: 1px solid #e8e8e8;
+    }
+    .other-service-nav h3 {
+        text-align: center;
+        font-size: 1.6em;
+        margin-top: 0; /* 見出しの上の余白をリセット */
+        margin-bottom: 50px; /* 見出しの下に十分な余白を設定 */
+    }
+    /* ページのコンテンツ全体の横幅を広げる */
+.page-service-inheritance .page-content {
+    max-width: 1100px; 
+}
+</style>
+</head>
+<body class="page-service-inheritance">
+    
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                    <h1>税理士法人notte</h1>
+                </a>
+            </div>
+            <div class="header-right-content">
+                <div class="header-contact">
+                    <div class="header-tel">
+                        <svg class="icon-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        <a href="tel:090-7251-3756">
+                            <span>090-7251-3756</span>
+                        </a>
+                    </div>
+                    <div class="header-reception-time">受付時間：平日9:00～17:00</div>
+                </div>
+                <a href="contact.html" class="header-cta-button">
+                    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>お問い合わせ ></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sticky-header-container">
+        <nav class="global-nav" id="global-nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">事務所概要・アクセス</a></li>
+                <li><a href="staff.html">スタッフ紹介</a></li>
+                <li class="has-submenu">
+                    <a href="services.html">サービス内容</a>
+                    <ul class="submenu">
+                        <li><a href="service-tax.html">税務顧問</a></li>
+                        <li><a href="service-mf.html">MFクラウド会計の導入支援</a></li>
+                        <li><a href="service-startup.html">会社設立・スタートアップ支援</a></li>
+                        <li><a href="service-inheritance.html">相続税申告・相続対策（相続専門サイト）</a></li>
+                    </ul>
+                </li>
+                <li><a href="service-inheritance.html">相続専門サイト</a></li>
+                <li><a href="price.html">料金表</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="news.html">お知らせ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<main>
+    <div class="page-header">
+        <h1>相続専門サイト</h1>
+    </div>
+    
+    <div class="page-content">
+       
+        <section class="service-summary fade-in fade-in-up">
+            <h2>円満な相続と、未来へつなぐ資産承継を。<br>専門家が親身にサポートします。</h2>
+            <p>
+                相続は、誰にとっても非常にデリケートで複雑な問題です。税理士法人notteでは、豊富な経験を持つ専門家が、お客様一人ひとりの状況に寄り添い、円滑な相続税申告はもちろん、将来を見据えた生前対策までトータルでサポートいたします。
+            </p>
+        </section>
+
+    <section class="other-service-nav fade-in fade-in-up">
+                <h3>サポート一覧</h3>
+        <div class="service-choice-grid">
+            <a href="service-inheritance-pre.html" class="choice-card">
+                <div class="choice-card-icon">📝</div>
+                <div class="choice-card-text">
+                    <h3>　　生前対策<span class="arrow">👉</span></h3>
+                    <p>将来の相続税やご家族のことを考え、今のうちから計画的に準備を進めたい方のためのサポートです。</p>
+                </div>
+            </a>
+            <a href="service-inheritance-post.html" class="choice-card">
+                <div class="choice-card-icon">🏠</div>
+                <div class="choice-card-text">
+                    <h3>　　相続税申告<span class="arrow">👉</span></h3>
+                    <p>ご家族がお亡くなりになり、10ヶ月以内の申告が必要な方のためのサポートです。迅速・正確に対応します。</p>
+                </div>
+            </a>
+            <a href="service-inheritance-gift.html" class="choice-card">
+                <div class="choice-card-icon">🎁</div>
+                <div class="choice-card-text">
+                    <h3>　　贈与税申告<span class="arrow">👉</span></h3>
+                    <p>ご家族への資金援助など、年間110万円を超える贈与があり、申告が必要な方のためのサポートです。</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+<section class="service-feature-numbered fade-in fade-in-up">
+    <div class="section-title">
+        <h2>安心の相続サポートをお約束する3つの強み</h2>
+    </div>
+    <div class="feature-numbered-list">
+        <div class="feature-numbered-item">
+            <div class="item-number">01</div>
+            <div class="item-text">
+                <h4>税務・法務・登記まで、ワンストップで解決</h4>
+                <p>相続は、税務申告を終えれば完了、ではありません。不動産の名義変更（相続登記）、預貯金や有価証券の解約・名義変更、保険金の請求、そして時には法的な対応まで、無数の手続きがご遺族を待ち受けます。これらの手続きを各専門家を探して個別に依頼するのは、精神的にも時間的にも大きな負担です。当事務所が、お客様の総合窓口となり、信頼できる司法書士と一体となって、全てのタスクを計画的に、そして円滑に進行。お客様には、その都度進捗をご報告し、安心して本来やるべきことに集中できる環境をお作りします。</p>
+            </div>
+        </div>
+        <div class="feature-numbered-item">
+            <div class="item-number">02</div>
+            <div class="item-text">
+                <h4>税理士の「腕の見せ所」である財産評価と節税提案</h4>
+                <p>相続税の納税額は、税理士の「財産評価」の知識と経験で決まります。特に、画一的な評価が難しい土地や、客観的な時価のない非上場株式は、評価方法一つで納税額が数百万、数千万単位で変動するケースも少なくありません。私たちは、豊富な実績を基に、不動産の現地調査から複雑な計算まで行い、財産の価値を適正に評価します。その上で、「小規模宅地等の特例」や「配偶者の税額軽減」といった適用要件の判断が難しい特例を、お客様の状況に合わせて最大限活用。二次相続まで見据えた最適な分割案と合わせ、お客様の貴重な財産を次世代へ繋ぐための、最善の節税プランをご提案します。</p>
+            </div>
+        </div>
+        <div class="feature-numbered-item">
+            <div class="item-number">03</div>
+            <div class="item-text">
+                <h4>料金への不安を解消する、無料相談と明確な見積</h4>
+                <p>私たちは、お客様が料金に不安を感じたまま、大切なご相談を躊躇されるべきではないと考えています。そのため、当事務所の初回のご相談は、時間や回数に制限なく完全に無料です。まずは、お客様の状況をじっくりとお伺いし、課題の整理と、当事務所がお手伝いできることを明確にご説明します。その上で、必ずご契約前に、詳細な業務内容と料金を記載したお見積書を提示し、ご納得いただけた場合にのみ、業務を開始いたします。料金への不安をゼロにしてから、安心してご依頼ください。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</main>
+
+    <section class="pre-footer-contact-section fade-in fade-in-up">
+        <div class="pre-footer-wrapper">
+            <div class="pre-footer-col">
+                <div class="info-logo">
+                    <a href="index.html">
+                        <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                        <h4>税理士法人notte</h4>
+                    </a>
+                </div>
+                <p>
+                    〒060-0052<br>
+                    北海道札幌市中央区南２条東２丁目１６番地　堀尾ビル
+                </p>
+                <p>
+                    電話番号: 090-7251-3756
+                </p>
+            </div>
+            <div class="pre-footer-col">
+                <h4 class="pre-footer-title">アクセスマップ</h4>
+                <div class="map-container-small">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.134043329485!2d141.3570381752392!3d43.05964829061886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29e33e00c753%3A0x1a92e5182ef7805a!2z56iO55CG5aOr5rOV5Lq6bm90dGU!5e0!3m2!1sja!2sjp!4v1750373566628!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="pre-footer-col contact-col">
+                <h4 class="pre-footer-title">お問い合わせ</h4>
+                <p class="tel-number">
+                    <a href="tel:090-7251-3756">090-7251-3756</a>
+                </p>
+                <p class="reception-time">受付時間：平日9:00～17:00</p>
+                <a href="contact.html" class="reason-button">メールでのお問い合わせ ></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">
+            <p>© 2025 Tax Accountant Office notte All rights reserved. </p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-buttons">
+        <a href="tel:090-7251-3756" class="sticky-tel-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" width="24" height="24"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+            <span>電話でのご相談</span>
+        </a>
+        <a href="contact.html" class="sticky-mail-button">
+            <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>メールでのご相談</span>
+        </a>
+    </div>
+
+    <div id="sticky-price-cta-wrapper">
+        <button id="sticky-price-cta-close" aria-label="閉じる">×</button>
+        <a href="fee-simulation.html" id="sticky-price-cta-link">
+            <span>報酬<br>無料試算</span>
+        </a>
+    </div>
+
+    <a href="#" id="page-top-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+    </a>
+
+    <script>
+        // --- ハンバーガーメニューの制御 ---
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const globalNav = document.getElementById('global-nav');
+    
+        if (hamburgerButton && globalNav) {
+            hamburgerButton.addEventListener('click', () => {
+                hamburgerButton.classList.toggle('is-active');
+                globalNav.classList.toggle('is-open');
+            });
+        }
+    
+        // --- 追従ボタンの表示・非表示を制御 ---
+        const sideButtons = document.querySelector('.side-sticky-buttons');
+        const pageTopButton = document.getElementById('page-top-button');
+        const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper');
+        const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close');
+        
+        if (sideButtons && pageTopButton && priceCtaWrapper) { 
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    sideButtons.classList.add('show');
+                    pageTopButton.classList.add('show');
+                    priceCtaWrapper.classList.add('show');
+                } else {
+                    sideButtons.classList.remove('show');
+                    pageTopButton.classList.remove('show');
+                    priceCtaWrapper.classList.remove('show');
+                }
+            });
+            pageTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        if(priceCtaCloseBtn && priceCtaWrapper) {
+            priceCtaCloseBtn.addEventListener('click', () => {
+                priceCtaWrapper.style.display = 'none';
+            });
+        }
+
+        /* --- スクロールアニメーションの制御 --- */
+        const fadeInTargets = document.querySelectorAll('.fade-in');
+        if (fadeInTargets.length > 0) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // 要素が10%見えたら実行
+            });
+
+            fadeInTargets.forEach(target => {
+                observer.observe(target);
+            });
+        }
+    </script>
+</body>
+</html>

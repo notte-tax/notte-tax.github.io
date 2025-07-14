@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>税理士法人notte - 札幌市の税理士法人</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <meta property="og:url" content="https://notte-tax-website.web.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="税理士法人notte - 札幌市の税理士法人" />
+    <meta property="og:description" content="札幌市中央区の税理士法人notteです。クラウド会計導入支援、税務顧問、相続対策など、お客様のビジネスをサポートします。" />
+    <meta property="og:site_name" content="税理士法人notte" />
+    <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+<style>
+    /* 項目間のスペースを調整 */
+    .feature-item:not(:last-child) {
+        margin-bottom: 100px; /* これはreason.html用のスタイルです */
+    }
+
+    /* 偶数番目(2番目)の背景色を変更 */
+    .feature-item:nth-child(even) {
+        background-color: #f9f9f9; /* これもreason.html用のスタイルです */
+    }
+
+    /* ▼▼▼ このスタイルを修正・適用 ▼▼▼ */
+    /* 最初のセクションを除く、すべてのセクションの上部に線と余白を追加 */
+    .page-content > section:not(:first-child) {
+        margin-top: 80px;
+        padding-top: 60px;
+        border-top: 1px solid #e8e8e8;
+    }
+    * ▼▼▼ ここから追記 ▼▼▼ */
+    /* ページ上部の概要文を中央ぞろえにする */
+    .service-summary {
+        text-align: center;
+    }
+    /* ▼▼▼ このスタイルを追記 ▼▼▼ */
+    .other-service-nav {
+        margin-top: 80px;
+        padding-top: 60px;
+        border-top: 1px solid #e8e8e8;
+    }
+    .other-service-nav h3 {
+        text-align: center;
+        font-size: 1.6em;
+        margin-top: 0; /* 見出しの上の余白をリセット */
+        margin-bottom: 50px; /* 見出しの下に十分な余白を設定 */
+    }
+    
+    .service-choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        margin-top: 80px;
+        margin-bottom: 0; /* 下のセクションとの余白を調整 */
+    }
+    .choice-card {
+        position: relative;
+        padding: 65px 30px 40px 30px;
+        background-color: #ffffff;
+        border: 2px solid #e8e8e8;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .choice-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    }
+
+    /* アイコン（絵文字）のスタイル */
+    .choice-card-icon {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #e8e8e8;
+        font-size: 40px; /* 絵文字のサイズをフォントサイズで指定 */
+        line-height: 1;
+    }
+    
+    .choice-card-icon svg {
+        width: 40px;
+        height: 40px;
+        color: #1caac3;
+    }
+
+    /* テキスト部分のスタイル */
+    .choice-card-text {
+        text-align: center;
+    }
+    .choice-card-text h3 {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #333;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .choice-card:hover .choice-card-text h3 {
+        color: #1caac3;
+    }
+    .choice-card-text p {
+        margin: 0;
+        line-height: 1.8;
+        color: #555;
+        font-size: 0.95em;
+    }
+
+    /* ホバー時に表示される指さしマークのスタイル */
+    .choice-card .arrow {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s;
+        margin-left: 10px;
+        font-size: 1.2em;
+        font-weight: normal;
+        line-height: 1;
+    }
+    .choice-card:hover .arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    /* ▼▼▼ このスタイルをstyleタグの一番下に追加してください ▼▼▼ */
+    .workflow-phase {
+        background: none;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* スマホ表示対応 */
+    @media (max-width: 768px) {
+        .service-choice-grid { 
+            grid-template-columns: 1fr; 
+            gap: 60px;
+            margin-top: 50px;
+        }
+    }
+
+    </style>
+    </head>
+    <body>
+    
+    <body class="page-service-inheritance-post">
+        
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                    <h1>税理士法人notte</h1>
+                </a>
+            </div>
+            <div class="header-right-content">
+                <div class="header-contact">
+                    <div class="header-tel">
+                        <svg class="icon-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        <a href="tel:090-7251-3756">
+                            <span>090-7251-3756</span>
+                        </a>
+                    </div>
+                    <div class="header-reception-time">受付時間：平日9:00～17:00</div>
+                </div>
+                <a href="contact.html" class="header-cta-button">
+                    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>お問い合わせ ></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sticky-header-container">
+        <nav class="global-nav" id="global-nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">事務所概要・アクセス</a></li>
+                <li><a href="staff.html">スタッフ紹介</a></li>
+                <li class="has-submenu">
+                    <a href="services.html">サービス内容</a>
+                    <ul class="submenu">
+                        <li><a href="service-tax.html">税務顧問</a></li>
+                        <li><a href="service-mf.html">MFクラウド会計の導入支援</a></li>
+                        <li><a href="service-startup.html">会社設立・スタートアップ支援</a></li>
+                        <li><a href="service-inheritance.html">相続税申告・相続対策（相続専門サイト）</a></li>
+                    </ul>
+                </li>
+                <li><a href="service-inheritance.html">相続専門サイト</a></li>
+                <li><a href="price.html">料金表</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="news.html">お知らせ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <h1>相続税申告</h1>
+        </div>
+        <div class="page-content">
+            <section class="service-summary">
+                <h2>10ヶ月の期限内に、迅速かつ正確な申告を。</h2>
+                <p>ご相続が発生してから申告・納税までは10ヶ月という短い期間しかありません。ご遺族の皆様が心穏やかに故人を偲ぶ時間を確保できるよう、私たちが羅針盤となり、複雑で膨大な手続きをナビゲートします。</p>
+            </section>
+            
+            <section class="service-recommend fade-in fade-in-up">
+                <h3>こんな方におすすめです</h3>
+                <ul>
+                    <li>初めての相続で、何から手をつけていいか分からない方</li>
+                    <li>仕事や日々の生活が忙しく、複雑な手続きを専門家に任せたい方</li>
+                    <li>土地や自社株など、評価が難しい財産をお持ちの方</li>
+                    <li>税務調査が不安なので、品質の高い申告書を作成してほしい方</li>
+                    <li>相続人同士で円満に遺産分割を進めたい方</li>
+                </ul>
+            </section>
+            <section class="service-content-detail fade-in fade-in-up">
+                <h3>主なサービス内容</h3>
+                <div class="content-block">
+                    <h4>相続人・相続財産の調査確定</h4>
+                    <p>戸籍謄本を収集して法的な相続人を確定させると同時に、預貯金・有価証券・不動産から借入金まで、全ての財産を網羅的に調査し、財産目録を作成します。</p>
+                </div>
+                <div class="content-block">
+                    <h4>財産評価・遺産分割協議書作成サポート</h4>
+                    <p>相続税法に基づき、土地や非上場株式などの財産を正確に評価します。二次相続まで考慮した分割案をご提示し、円満な合意形成をサポート。法的に有効な遺産分割協議書を作成します。</p>
+                </div>
+                <div class="content-block">
+                    <h4>相続税申告書の作成・提出</h4>
+                    <p>確定した遺産分割内容に基づき、相続税申告書を作成し、電子申告にて税務署へ提出します。税理士が申告内容を保証する「書面添付制度」を活用し、税務調査のリスクを低減します。</p>
+                </div>
+                <div class="content-block">
+                    <h4>税務調査対応・各種名義変更サポート</h4>
+                    <p>申告後に税務署からの問い合わせがあった場合も、お客様の代理として責任を持って対応します。また、提携司法書士と連携し、不動産などの名義変更手続きもスムーズに行います。</p>
+                </div>
+            </section>            
+
+            <section class="phased-workflow inheritance-tax-section-after fade-in fade-in-up">
+                <div class="workflow-phase">
+                    <h3><span class="phase-label">相続税申告</span>相続発生後の手続き</h3>
+                    <p class="phase-description">ご相続が発生してから申告・納税までは10ヶ月という短い期間しかありません。ご遺族の皆様が心穏やかに故人を偲ぶ時間を確保できるよう、私たちが羅針盤となり、複雑で膨大な手続きを迅速かつ正確にナビゲートします。</p>
+                    <ol class="workflow-list">
+                        <li>
+                            <div class="workflow-box">
+                                <span class="workflow-step-number">STEP 1</span>
+                                <h4>相続手続きの開始とスケジュール策定</h4>
+                                <p>死亡届の確認、遺言書の検認手続き、戸籍謄本の収集による全相続人の確定作業を迅速に開始します。同時に、10ヶ月の期限から逆算した詳細なスケジュールと必要書類のチェックリストをご提示し、手続きの全体像を明確にします。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="workflow-box">
+                                <span class="workflow-step-number">STEP 2</span>
+                                <h4>相続財産の網羅的な調査・評価</h4>
+                                <p>金融機関への残高証明の請求、不動産の現地調査、生命保険金の確認など、相続財産を一つひとつ網羅的に確定させ、相続税法に基づき厳密に評価します。特に評価額が大きく変動する土地については、あらゆる特例の適用を検討し、評価額を適法な範囲で最小限に抑えます。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="workflow-box">
+                                <span class="workflow-step-number">STEP 3</span>
+                                <h4>円満な遺産分割協議のフルサポート</h4>
+                                <p>相続人皆様のお気持ちを丁寧に伺いながら、二次相続（次の相続）まで見据えた税負担のシミュレーション結果など、客観的なデータをご提示します。感情的な対立を避け、全員が納得できる円満な合意形成がなされるよう、中立的な専門家として協議をファシリテートし、法的に有効な遺産分割協議書を作成します。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="workflow-box">
+                                <span class="workflow-step-number">STEP 4</span>
+                                <h4>相続税申告書の作成・提出とアフターフォロー</h4>
+                                <p>合意内容に基づき、相続税申告書を作成します。申告書の品質を税理士が保証する『書面添付制度』を標準活用し、税務調査のリスクを大幅に軽減します。申告書提出後も、税務署からの問い合わせ対応や、納税手続きまで責任を持ってサポートいたします。</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+<section class="inheritance-schedule fade-in fade-in-up">
+    <h3>相続発生から10ヶ月のスケジュール</h3>
+    <p class="schedule-summary">相続税の申告・納税は、ご相続の開始があったことを知った日の翌日から10ヶ月以内に行う必要があります。主な手続きの期限と流れは以下の通りです。</p>
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-point"></div>
+            <div class="timeline-content">
+                <h4>速やかに（7日以内目安）</h4>
+                <ul>
+                    <li><strong>死亡届の提出：</strong>ご逝去後、まず行うべき手続きです。今後の流れについても、この段階でご相談ください。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-point"></div>
+            <div class="timeline-content">
+                <h4>3ヶ月以内</h4>
+                <ul>
+                    <li><strong>遺言書の有無の確認・検認：</strong>公正証書遺言以外の遺言書は、家庭裁判所での検認手続きが必要です。</li>
+                    <li><strong>相続人の調査・確定：</strong>戸籍謄本を遡って収集し、法的な相続人を全員確定させます。</li>
+                    <li><strong class="deadline">【期限】</strong><strong>相続放棄・限定承認の申述：</strong>財産よりも借金が多い場合などに検討します。期限を過ぎると単純承認したものとみなされます。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-point"></div>
+            <div class="timeline-content">
+                <h4>4ヶ月以内</h4>
+                <ul>
+                    <li><strong>相続財産の調査・評価：</strong>預貯金、不動産、有価証券などのプラスの財産から、借入金などのマイナスの財産まで全てを調査し、相続税法に基づき評価します。</li>
+                    <li><strong>財産目録の作成：</strong>調査した財産の内容を一覧にまとめます。遺産分割協議の基礎資料となります。</li>
+                    <li><strong class="deadline">【期限】</strong><strong>被相続人の所得税申告（準確定申告）：</strong>亡くなった方のその年1月1日から死亡日までの所得を計算し、申告・納税します。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-point"></div>
+            <div class="timeline-content">
+                <h4>10ヶ月以内</h4>
+                <ul>
+                    <li><strong>遺産分割協議：</strong>相続人全員で、誰がどの財産をどれだけ取得するかを話し合います。二次相続まで見据えた最適な分割案をご提案します。</li>
+                    <li><strong>遺産分割協議書の作成：</strong>全員の合意内容を法的に有効な書面として作成します。</li>
+                    <li><strong class="deadline">【期限】</strong><strong>相続税申告書の作成・提出：</strong>協議内容に基づき、特例等を最大限活用した申告書を作成し、税務署へ提出します。</li>
+                    <li><strong class="deadline">【期限】</strong><strong>相続税の納税：</strong>算出された相続税額を金融機関などで納付します。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-point"></div>
+            <div class="timeline-content">
+                <h4>申告後</h4>
+                <ul>
+                    <li><strong>不動産、預貯金等の名義変更：</strong>遺産分割協議書に基づき、各種財産の名義を相続人へ変更します。</li>
+                    <li><strong>遺産の分配：</strong>各相続人へ、協議内容に沿って遺産を分配します。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-flow fade-in fade-in-up">
+                <h3>ご契約までの流れ</h3>
+                <ol class="flow-steps">
+                    <li>
+                        <div class="flow-step-content-wrapper">
+                            <div class="flow-step-header">
+                                <span class="flow-step-number">STEP 01</span>
+                                <h4 class="flow-step-title">お問い合わせ</h4>
+                            </div>
+                            <p class="flow-step-description">まずはお問い合わせフォーム、またはお電話にてお気軽にご連絡ください。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flow-step-content-wrapper">
+                            <div class="flow-step-header">
+                                <span class="flow-step-number">STEP 02</span>
+                                <h4 class="flow-step-title">初回無料相談</h4>
+                            </div>
+                            <p class="flow-step-description">お客様の家族構成や財産状況をヒアリングし、課題を整理します。（オンライン対応可）</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flow-step-content-wrapper">
+                            <div class="flow-step-header">
+                                <span class="flow-step-number">STEP 03</span>
+                                <h4 class="flow-step-title">ご提案・お見積り</h4>
+                            </div>
+                            <p class="flow-step-description">ヒアリング内容に基づき、サポートプランとお見積りをご提示します。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flow-step-content-wrapper">
+                            <div class="flow-step-header">
+                                <span class="flow-step-number">STEP 04</span>
+                                <h4 class="flow-step-title">ご契約</h4>
+                            </div>
+                            <p class="flow-step-description">ご提案内容にご納得いただけましたら、契約を締結し、業務を開始します。</p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="other-service-nav fade-in fade-in-up">
+                <h3>その他の相続サポート</h3>
+                <div class="service-choice-grid">
+                    <a href="service-inheritance-pre.html" class="choice-card">
+                        <div class="choice-card-icon">📝</div>
+                        <div class="choice-card-text">
+                            <h3>　　生前対策<span class="arrow">👉</span></h3>
+                            <p>将来の相続税やご家族のことを考え、今のうちから計画的に準備を進めたい方のためのサポートです。</p>
+                        </div>
+                    </a>
+                    <a href="service-inheritance-gift.html" class="choice-card">
+                        <div class="choice-card-icon">🎁</div>
+                        <div class="choice-card-text">
+                            <h3>　　贈与税申告<span class="arrow">👉</span></h3>
+                            <p>年間110万円を超える贈与があり、申告が必要な方のためのサポートです。</p>
+                        </div>
+                    </a>
+                    <a href="service-inheritance.html" class="choice-card">
+                        <div class="choice-card-icon">🔙</div>
+                        <div class="choice-card-text">
+                            <h3>　　TOPへ<span class="arrow">👉</span></h3>
+                            <p>他の相続関連サービスもご覧いただけます。</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+</div>
+    </main>
+
+<section class="pre-footer-contact-section fade-in fade-in-up">
+    <div class="pre-footer-wrapper">
+        <div class="pre-footer-col">
+            <div class="info-logo">
+                <a href="index.html">
+                    <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                    <h4>税理士法人notte</h4>
+                </a>
+            </div>
+            <p>
+                〒060-0052<br>
+                北海道札幌市中央区南２条東２丁目１６番地　堀尾ビル
+            </p>
+            <p>
+                電話番号: 090-7251-3756
+            </p>
+        </div>
+        <div class="pre-footer-col">
+            <h4 class="pre-footer-title">アクセスマップ</h4>
+            <div class="map-container-small">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.134043329485!2d141.3570381752392!3d43.05964829061886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29e33e00c753%3A0x1a92e5182ef7805a!2z56iO55CG5aOr5rOV5Lq6bm90dGU!5e0!3m2!1sja!2sjp!4v1750373566628!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="pre-footer-col contact-col">
+            <h4 class="pre-footer-title">お問い合わせ</h4>
+            <p class="tel-number">
+                <a href="tel:090-7251-3756">090-7251-3756</a>
+            </p>
+            <p class="reception-time">受付時間：平日9:00～17:00</p>
+            <a href="contact.html" class="reason-button">メールでのお問い合わせ ></a>
+        </div>
+    </div>
+</section>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">
+            <p>© 2025 Tax Accountant Office notte All rights reserved. </p>
+        </div>
+    </footer>
+
+<div class="side-sticky-buttons">
+    <a href="tel:090-7251-3756" class="sticky-tel-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" width="24" height="24"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+        <span>電話でのご相談</span>
+    </a>
+<a href="contact.html" class="sticky-mail-button">
+    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+    <span>メールでのご相談</span>
+</a>
+</div>
+    </div>
+        <div id="sticky-price-cta-wrapper">
+        <button id="sticky-price-cta-close" aria-label="閉じる">×</button>
+        <a href="fee-simulation.html" id="sticky-price-cta-link">
+          <span>報酬<br>無料試算</span>
+        </a>
+    </div>
+
+
+    <a href="#" id="page-top-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+    </a>
+    <script>
+        // --- ハンバーガーメニューの制御 ---
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const globalNav = document.getElementById('global-nav');
+    
+        if (hamburgerButton && globalNav) {
+            hamburgerButton.addEventListener('click', () => {
+                hamburgerButton.classList.toggle('is-active');
+                globalNav.classList.toggle('is-open');
+            });
+        }
+    
+// --- 追従ボタンの表示・非表示を制御 ---
+const sideButtons = document.querySelector('.side-sticky-buttons');
+const pageTopButton = document.getElementById('page-top-button');
+const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper'); // ★IDを新しいものに変更
+const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close'); // ★閉じるボタンを取得
+
+// 正しいラッパー（priceCtaWrapper）を条件に追加
+if (sideButtons && pageTopButton && priceCtaWrapper) { 
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            sideButtons.classList.add('show');
+            pageTopButton.classList.add('show');
+            priceCtaWrapper.classList.add('show');
+        } else {
+            sideButtons.classList.remove('show');
+            pageTopButton.classList.remove('show');
+            priceCtaWrapper.classList.remove('show');
+        }
+    });
+    pageTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ★【追加】閉じるボタンのクリック処理
+if(priceCtaCloseBtn && priceCtaWrapper) {
+    priceCtaCloseBtn.addEventListener('click', () => {
+        priceCtaWrapper.style.display = 'none'; // ボタンのラッパーごと非表示にする
+    });
+}
+
+    /* --- スクロールアニメーションの制御 --- */
+    const fadeInTargets = document.querySelectorAll('.fade-in');
+    if (fadeInTargets.length > 0) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // 要素が10%見えたら実行
+        });
+
+        fadeInTargets.forEach(target => {
+            observer.observe(target);
+        });
+    }
+</script>
+
+</body>
+</html>

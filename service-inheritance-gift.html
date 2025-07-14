@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>税理士法人notte - 札幌市の税理士法人</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <meta property="og:url" content="https://notte-tax-website.web.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="税理士法人notte - 札幌市の税理士法人" />
+    <meta property="og:description" content="札幌市中央区の税理士法人notteです。クラウド会計導入支援、税務顧問、相続対策など、お客様のビジネスをサポートします。" />
+    <meta property="og:site_name" content="税理士法人notte" />
+    <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+<style>
+    .page-content > section:not(:first-child) {
+        margin-top: 80px;
+        padding-top: 60px;
+        border-top: 1px solid #e8e8e8;
+    }
+    .service-summary {
+        text-align: center;
+    }
+    .other-service-nav {
+        margin-top: 80px;
+        padding-top: 60px;
+        border-top: 1px solid #e8e8e8;
+    }
+    .other-service-nav h3 {
+        text-align: center;
+        font-size: 1.6em;
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .service-choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        margin-top: 80px;
+        margin-bottom: 0;
+    }
+    .choice-card {
+        position: relative;
+        padding: 65px 30px 40px 30px;
+        background-color: #ffffff;
+        border: 2px solid #e8e8e8;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .choice-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    }
+    .choice-card-icon {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #e8e8e8;
+        font-size: 40px;
+        line-height: 1;
+    }
+    .choice-card-text {
+        text-align: center;
+    }
+    .choice-card-text h3 {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #333;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .choice-card:hover .choice-card-text h3 {
+        color: #1caac3;
+    }
+    .choice-card-text p {
+        margin: 0;
+        line-height: 1.8;
+        color: #555;
+        font-size: 0.95em;
+    }
+    .choice-card .arrow {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s;
+        margin-left: 10px;
+        font-size: 1.2em;
+        font-weight: normal;
+        line-height: 1;
+    }
+    .choice-card:hover .arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* ▼▼▼ タイムラインのスタイル ▼▼▼ */
+    .inheritance-schedule { text-align: center; }
+    .schedule-summary { max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 60px; line-height: 1.8; text-align: center; }
+    .timeline-container { position: relative; max-width: 800px; margin: 0 auto; padding: 20px 0; }
+    .timeline-container::before { content: ''; position: absolute; top: 0; left: 20px; height: 100%; width: 3px; background-color: #1caac3; opacity: 0.3; }
+    .timeline-item { position: relative; margin-bottom: 40px; padding-left: 60px; text-align: left; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-point { position: absolute; top: 5px; left: 11px; width: 20px; height: 20px; background-color: #1caac3; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 10px rgba(28, 170, 195, 0.5); }
+    .timeline-content h4 { font-size: 1.2em; margin-top: 0; margin-bottom: 15px; color: #1caac3; }
+    .timeline-content ul { list-style: none; padding-left: 0; margin: 0; }
+    .timeline-content li { padding: 5px 0; line-height: 1.7; }
+    .timeline-content li strong.deadline { color: #d9534f; }
+    
+    /* ▼▼▼ この行を削除しました ▼▼▼ */
+    /* .workflow-phase, .workflow-box { background: none; padding: 0; border: none; box-shadow: none; } */
+    .workflow-phase {
+        background: none;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+        .service-choice-grid { grid-template-columns: 1fr; gap: 60px; margin-top: 50px; }
+        .timeline-container::before { left: 10px; }
+        .timeline-item { padding-left: 45px; }
+        .timeline-point { left: 1px; width: 18px; height: 18px; }
+        .schedule-summary { margin-bottom: 40px; text-align: left; }
+    }
+</style>
+</head>
+<body class="page-service-inheritance-gift">
+
+<header class="header">
+    <div class="header-inner">
+        <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く"><span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span></button>
+        <div class="header-logo"><a href="index.html"><img src="アートボード 2.png" alt="税理士法人notte ロゴ"><h1>税理士法人notte</h1></a></div>
+        <div class="header-right-content">
+            <div class="header-contact">
+                <div class="header-tel"><svg class="icon-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg><a href="tel:090-7251-3756"><span>090-7251-3756</span></a></div>
+                <div class="header-reception-time">受付時間：平日9:00～17:00</div>
+            </div>
+            <a href="contact.html" class="header-cta-button"><svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>お問い合わせ ></span></a>
+        </div>
+    </div>
+</header>
+<div class="sticky-header-container">
+    <nav class="global-nav" id="global-nav">
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="about.html">事務所概要・アクセス</a></li>
+            <li><a href="staff.html">スタッフ紹介</a></li>
+            <li class="has-submenu"><a href="services.html">サービス内容</a><ul class="submenu"><li><a href="service-tax.html">税務顧問</a></li><li><a href="service-mf.html">MFクラウド会計の導入支援</a></li><li><a href="service-startup.html">会社設立・スタートアップ支援</a></li><li><a href="service-inheritance.html">相続税申告・相続対策（相続専門サイト）</a></li></ul></li>
+            <li><a href="service-inheritance.html">相続専門サイト</a></li>
+            <li><a href="price.html">料金表</a></li>
+            <li><a href="recruit.html">採用情報</a></li>
+            <li><a href="news.html">お知らせ</a></li>
+        </ul>
+    </nav>
+</div>
+<main>
+    <div class="page-header" id="header-gift"><h1>贈与税申告</h1></div>
+    <div class="page-content">
+        <section class="service-summary">
+            <h2>将来を見据えた、最適な贈与を。</h2>
+            <p>年間110万円を超える贈与を受けた場合、贈与税の申告が必要です。将来の相続も見据え、暦年課税や相続時精算課税制度など、最適な税制を選択し、適正な申告をサポートします。</p>
+        </section>
+        <section class="service-recommend fade-in fade-in-up">
+            <h3>こんな方におすすめです</h3>
+            <ul>
+                <li>年間110万円を超える贈与を受けた、または行った方</li>
+                <li>「相続時精算課税制度」の利用を検討している方</li>
+                <li>親から住宅購入資金の援助を受け、「住宅取得等資金の非課税特例」を使いたい方</li>
+                <li>夫婦間で居住用不動産を贈与し、「配偶者控除」の特例を使いたい方</li>
+                <li>将来の相続税対策として、計画的な贈与を進めたい方</li>
+            </ul>
+        </section>
+        <section class="service-content-detail fade-in fade-in-up">
+            <h3>主なサービス内容</h3>
+            <div class="content-block"><h4>贈与税の申告要否の判断</h4><p>お客様の状況を伺い、そもそも贈与税の申告が必要かどうかを専門家の視点から的確に判断し、アドバイスいたします。</p></div>
+            <div class="content-block"><h4>暦年課税・相続時精算課税の選択支援</h4><p>どちらの制度を選択するのが有利か、将来の相続まで見据えてシミュレーションを行います。お客様にとって最適な制度選択をサポートします。</p></div>
+            <div class="content-block"><h4>各種特例の適用サポート</h4><p>「住宅取得等資金の非課税」「配偶者控除」「教育資金の一括贈与」など、複雑な要件が絡む各種特例の適用を、必要書類の準備から丁寧にお手伝いします。</p></div>
+            <div class="content-block"><h4>贈与税申告書の作成・提出</h4><p>贈与契約書などの資料を基に、正確な贈与税申告書を作成し、電子申告にて代理提出いたします。将来の税務調査にも耐えうる、品質の高い申告書をご提供します。</p></div>
+        </section>
+
+
+<section class="phased-workflow gift-tax-section fade-in fade-in-up">
+            <div class="workflow-phase">
+                <h3><span class="phase-label">贈与税申告</span>贈与税の申告手続きと流れ</h3>
+                <p class="phase-description">年間110万円を超える贈与を受けた個人及び相続時精算課税贈与を受けた個人は、贈与税の申告が必要です。将来の相続も見据え、最適な税制を選択し、適正な申告をサポートします。</p>
+                <ol class="workflow-list">
+                     <li>
+                        <div class="workflow-box">
+                            <span class="workflow-step-number">STEP 1</span>
+                            <h4>ご相談・贈与内容の確認</h4>
+                            <p>「誰から、誰へ、いつ、何を、いくら」贈与した（された）のか、具体的な内容をヒアリングします。贈与契約書の有無や、資金の移動状況などを確認し、暦年課税と相続時精算課税のどちらを選択すべきか、専門的な視点から助言します。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="workflow-box">
+                            <span class="workflow-step-number">STEP 2</span>
+                            <h4>資料収集と財産評価</h4>
+                            <p>贈与契約書、預金通帳のコピー、不動産の登記事項証明書など、申告に必要な書類のご案内と収集サポートを行います。贈与された財産が不動産や非上場株式など、評価が複雑なものであっても、相続税評価額に準じて適正に評価します。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="workflow-box">
+                            <span class="workflow-step-number">STEP 3</span>
+                            <h4>贈与税額の計算</h4>
+                            <p>確定した財産の評価額に基づき、贈与税額を正確に計算します。配偶者控除や住宅取得等資金の贈与の非課税特例など、適用可能な控除・特例を漏れなく検討し、お客様の税負担が最小限になるよう努めます。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="workflow-box">
+                            <span class="workflow-step-number">STEP 4</span>
+                            <h4>申告書の作成・提出</h4>
+                            <p>計算結果に基づき、贈与税の申告書を作成します。内容をお客様にご確認いただいた後、当事務所が代理で電子申告（e-Tax）にて税務署へ提出いたします。申告期限（贈与を受けた年の翌年2月1日〜3月15日）に間に合うよう、計画的に進めます。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="workflow-box">
+                            <span class="workflow-step-number">STEP 5</span>
+                            <h4>納税サポートとアフターフォロー</h4>
+                            <p>申告書の提出後、納税に必要な納付書をお渡しし、納付手続きについてご案内します。また、将来の税務調査に備えて、申告に関する記録を当事務所で適切に保管し、万が一の問い合わせにも責任を持って対応します。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        
+                <section class="inheritance-schedule fade-in fade-in-up">
+            <h3>贈与税申告の年間スケジュール</h3>
+            <p class="schedule-summary">贈与は計画から申告・納税までが一連の流れです。将来の相続まで見据え、各ステップを確実に実行することが重要になります。</p>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h4>【計画フェーズ】〜贈与を行う前</h4>
+                        <ul>
+                            <li><strong>目的と制度の検討：</strong>なぜ贈与するのか目的を明確にし、毎年の非課税枠を使う「暦年贈与」か、将来の相続時に精算する「相続時精算課税制度」か、どちらが有利かシミュレーションします。</li>
+                            <li><strong>特例の確認：</strong>住宅取得資金や教育資金、夫婦間の居住用不動産の贈与など、利用できる非課税特例がないかを確認します。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h4>【実行フェーズ】贈与を行う年（1月1日～12月31日）</h4>
+                        <ul>
+                            <li><strong>贈与契約書の作成：</strong>贈与の事実を証明するため、贈与者（あげる人）と受贈者（もらう人）の間で必ず「贈与契約書」を作成します。</li>
+                            <li><strong>贈与の実行：</strong>現金の場合は、日付が記録に残る銀行振込で行うのが安全です。不動産の場合は、所有権移転登記をこの期間内に行います。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h4>【申告準備フェーズ】申告期間前（翌年1月頃〜）</h4>
+                        <ul>
+                            <li><strong>必要書類の収集：</strong>贈与契約書、振込明細、戸籍謄本（続柄証明）、不動産の登記事項証明書など、申告に必要な書類を準備します。</li>
+                            <li><strong>贈与税額の計算：</strong>その年に受けた贈与の合計額から基礎控除額（通常110万円）を引き、税率を乗じて正確な納税額を計算します。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h4>【申告・納税フェーズ】贈与の翌年（2月1日～3月15日）</h4>
+                        <ul>
+                            <li><strong class="deadline">【期限】贈与税の申告：</strong>完成した申告書を、受贈者（もらった人）の住所地を管轄する税務署へ提出します。当事務所ではe-Taxによる電子申告で対応します。</li>
+                            <li><strong class="deadline">【期限】贈与税の納税：</strong>金融機関の窓口や、クレジットカード、コンビニなどで計算した税額を納付します。申告と納税、両方を期限内に終える必要があります。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="service-flow fade-in fade-in-up">
+            <h3>ご契約までの流れ</h3>
+            <ol class="flow-steps">
+                <li><div class="flow-step-content-wrapper"><div class="flow-step-header"><span class="flow-step-number">STEP 01</span><h4 class="flow-step-title">お問い合わせ</h4></div><p class="flow-step-description">まずはお問い合わせフォーム、またはお電話にてお気軽にご連絡ください。</p></div></li>
+                <li><div class="flow-step-content-wrapper"><div class="flow-step-header"><span class="flow-step-number">STEP 02</span><h4 class="flow-step-title">初回無料相談</h4></div><p class="flow-step-description">お客様の家族構成や財産状況をヒアリングし、課題を整理します。（オンライン対応可）</p></div></li>
+                <li><div class="flow-step-content-wrapper"><div class="flow-step-header"><span class="flow-step-number">STEP 03</span><h4 class="flow-step-title">ご提案・お見積り</h4></div><p class="flow-step-description">ヒアリング内容に基づき、サポートプランとお見積りをご提示します。</p></div></li>
+                <li><div class="flow-step-content-wrapper"><div class="flow-step-header"><span class="flow-step-number">STEP 04</span><h4 class="flow-step-title">ご契約</h4></div><p class="flow-step-description">ご提案内容にご納得いただけましたら、契約を締結し、業務を開始します。</p></div></li>
+            </ol>
+        </section>
+
+        <section class="other-service-nav fade-in fade-in-up">
+            <h3>その他の相続サポート</h3>
+            <div class="service-choice-grid">
+                <a href="service-inheritance-pre.html" class="choice-card"><div class="choice-card-icon">📝</div><div class="choice-card-text"><h3>　　生前対策<span class="arrow">👉</span></h3><p>将来の相続税やご家族のことを考え、今のうちから計画的に準備を進めたい方のためのサポートです。</p></div></a>
+                <a href="service-inheritance-post.html" class="choice-card"><div class="choice-card-icon">🏠</div><div class="choice-card-text"><h3>　　相続税申告<span class="arrow">👉</span></h3><p>ご家族がお亡くなりになり、10ヶ月以内の申告が必要な方のためのサポートです。</p></div></a>
+                <a href="service-inheritance.html" class="choice-card"><div class="choice-card-icon">🔙</div><div class="choice-card-text"><h3>　　TOPへ<span class="arrow">👉</span></h3><p>他の相続関連サービスもご覧いただけます。</p></div></a>
+            </div>
+        </section>            
+    </div>
+</main>
+<section class="pre-footer-contact-section fade-in fade-in-up">
+    <div class="pre-footer-wrapper">
+        <div class="pre-footer-col">
+            <div class="info-logo"><a href="index.html"><img src="アートボード 2.png" alt="税理士法人notte ロゴ"><h4>税理士法人notte</h4></a></div>
+            <p>〒060-0052<br>北海道札幌市中央区南２条東２丁目１６番地　堀尾ビル</p>
+            <p>電話番号: 090-7251-3756</p>
+        </div>
+        <div class="pre-footer-col">
+            <h4 class="pre-footer-title">アクセスマップ</h4>
+            <div class="map-container-small"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.134043329485!2d141.3570381752392!3d43.05964829061886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29e33e00c753%3A0x1a92e5182ef7805a!2z56iO55CG5aOr5rOV5Lq6bm90dGU!5e0!3m2!1sja!2sjp!4v1750373566628!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+        <div class="pre-footer-col contact-col">
+            <h4 class="pre-footer-title">お問い合わせ</h4>
+            <p class="tel-number"><a href="tel:090-7251-3756">090-7251-3756</a></p>
+            <p class="reception-time">受付時間：平日9:00～17:00</p>
+            <a href="contact.html" class="reason-button">メールでのお問い合わせ ></a>
+        </div>
+    </div>
+</section>
+<footer class="site-footer"><div class="footer-copyright"><p>© 2025 Tax Accountant Office notte All rights reserved. </p></div></footer>
+<div class="side-sticky-buttons"><a href="tel:090-7251-3756" class="sticky-tel-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" width="24" height="24"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg><span>電話でのご相談</span></a><a href="contact.html" class="sticky-mail-button"><svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>メールでのご相談</span></a></div>
+<div id="sticky-price-cta-wrapper"><button id="sticky-price-cta-close" aria-label="閉じる">×</button><a href="fee-simulation.html" id="sticky-price-cta-link"><span>報酬<br>無料試算</span></a></div>
+<a href="#" id="page-top-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg></a>
+<script>
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const globalNav = document.getElementById('global-nav');
+    if (hamburgerButton && globalNav) { hamburgerButton.addEventListener('click', () => { hamburgerButton.classList.toggle('is-active'); globalNav.classList.toggle('is-open'); }); }
+    const sideButtons = document.querySelector('.side-sticky-buttons');
+    const pageTopButton = document.getElementById('page-top-button');
+    const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper');
+    const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close');
+    if (sideButtons && pageTopButton && priceCtaWrapper) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) { sideButtons.classList.add('show'); pageTopButton.classList.add('show'); priceCtaWrapper.classList.add('show'); }
+            else { sideButtons.classList.remove('show'); pageTopButton.classList.remove('show'); priceCtaWrapper.classList.remove('show'); }
+        });
+        pageTopButton.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+    if(priceCtaCloseBtn && priceCtaWrapper) { priceCtaCloseBtn.addEventListener('click', () => { priceCtaWrapper.style.display = 'none'; }); }
+    const fadeInTargets = document.querySelectorAll('.fade-in');
+    if (fadeInTargets.length > 0) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1 });
+        fadeInTargets.forEach(target => { observer.observe(target); });
+    }
+</script>
+</body>
+</html>

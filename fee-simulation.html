@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>料金シミュレーション ｜ 税理士法人notte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta property="og:url" content="https://notte-tax-website.web.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="料金シミュレーション ｜ 税理士法人notte" />
+    <meta property="og:description" content="いくつかの簡単な質問に答えるだけで、税理士法人notteの顧問料・決算料の概算をご確認いただけます。" />
+    <meta property="og:site_name" content="税理士法人notte" />
+    <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                    <h1>税理士法人notte</h1>
+                </a>
+            </div>
+            <div class="header-right-content">
+                <div class="header-contact">
+                    <div class="header-tel">
+                        <svg class="icon-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        <a href="tel:090-7251-3756">
+                            <span>090-7251-3756</span>
+                        </a>
+                    </div>
+                    <div class="header-reception-time">受付時間：平日9:00～17:00</div>
+                </div>
+                <a href="contact.html" class="header-cta-button">
+                    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>お問い合わせ ></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="sticky-header-container">
+        <nav class="global-nav" id="global-nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">事務所概要・アクセス</a></li>
+                <li><a href="staff.html">スタッフ紹介</a></li>
+                <li class="has-submenu">
+                    <a href="services.html">サービス内容</a>
+                    <ul class="submenu">
+                        <li><a href="service-tax.html">税務顧問</a></li>
+                        <li><a href="service-mf.html">MFクラウド会計の導入支援</a></li>
+                        <li><a href="service-startup.html">会社設立・スタートアップ支援</a></li>
+                        <li><a href="service-inheritance.html">相続税申告・相続対策（相続専門サイト）</a></li>
+                    </ul>
+                </li>
+                <li><a href="service-inheritance.html">相続専門サイト</a></li>
+                <li><a href="price.html">料金表</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="news.html">お知らせ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<main>
+    <div class="page-header fade-in">
+        <h1 class="text-reveal-container fade-in"><span class="text-reveal-item">簡単料金シミュレーション</span></h1>
+    </div>
+
+    <div class="page-nav-buttons">
+        <a href="#fee-simulator" class="page-nav-button">顧問報酬<br>シミュレーション</a>
+        <a href="#inheritance-simulator" class="page-nav-button">相続報酬<br>シミュレーション</a>
+    </div>
+
+    <div class="page-content">
+<div id="fee-simulator" class="simulator-box fade-in fade-in-up">
+    <h2 class="section-title">税務顧問 報酬シミュレーション</h2>
+
+    <div class="sim-question">
+        <h3 class="question-title">Q1. 面談・訪問はご希望ですか？</h3>
+        <div class="radio-group radio-group-vertical">
+            <input type="radio" name="meeting_type" value="5000" id="meet_visit">
+            <label for="meet_visit">訪問</label>
+            <input type="radio" name="meeting_type" value="0" id="meet_web" checked>
+            <label for="meet_web">来所・WEB面談</label>
+            <input type="radio" name="meeting_type" value="-5000" id="meet_none">
+            <label for="meet_none">面談不要</label>
+        </div>
+    </div>
+
+    <div class="sim-question">
+        <h3 class="question-title">Q2. 年間売上高はどのくらいですか？</h3>
+        <select name="sales_range" class="sim-select">
+            <option value="20000_100000">～1,000万円</option>
+            <option value="20000_150000" selected>～3,000万円</option>
+            <option value="25000_180000">～1億円</option>
+            <option value="30000_200000">1億円～</option>
+        </select>
+    </div>
+
+    <div class="sim-question">
+        <h3 class="question-title">Q3. 記帳代行は必要ですか？</h3>
+        <div class="radio-group">
+            <input type="radio" name="bookkeeping" value="yes" id="bookkeeping_yes">
+            <label for="bookkeeping_yes">はい</label>
+            <input type="radio" name="bookkeeping" value="no" id="bookkeeping_no" checked>
+            <label for="bookkeeping_no">いいえ</label>
+        </div>
+    </div>
+
+    <div id="bookkeeping-details" class="sim-question" style="display: none;">
+        <h3 class="question-title">Q4. 月間の仕訳数の目安を選択してください</h3>
+        <select name="transaction_volume" class="sim-select">
+            <option value="50">～50仕訳</option>
+            <option value="100">～100仕訳</option>
+            <option value="150">～150仕訳</option>
+            <option value="200">～200仕訳</option>
+            <option value="300">～300仕訳</option>
+            <option value="400">～400仕訳</option>
+            <option value="500">～500仕訳</option>
+            <option value="600">～600仕訳</option>
+            <option value="700">～700仕訳</option>
+            <option value="800">～800仕訳</option>
+            <option value="900">～900仕訳</option>
+            <option value="1000">～1000仕訳</option>
+        </select>
+    </div>
+
+    <div id="sim-results">
+        <p class="results-title">概算 顧問料（税抜）</p>
+        <div class="results-grid">
+            <div class="result-item">
+                <p class="result-label">税務顧問（月額）</p>
+                <p class="result-value" id="result-monthly">¥0</p>
+            </div>
+            <div class="result-item">
+                <p class="result-label">決算申告料（年額）</p>
+                <p class="result-value" id="result-annual-filing">¥0</p>
+            </div>
+        </div>
+        <div class="result-total">
+            <p class="result-label">年間合計</p>
+            <p class="result-value-total" id="result-total-year">¥0</p>
+        </div>
+        <p class="results-note">※上記はあくまで概算です。詳細な料金はお問い合わせください。</p>
+    </div>
+    <div id="sim-results">
+</div>
+
+                </div>
+        </div> 
+        <hr class="section-divider">
+
+<div id="inheritance-simulator" class="simulator-box fade-in fade-in-up">
+    <h2 class="section-title">相続税申告 報酬シミュレーション</h2>
+    
+    <div class="sim-question">
+        <h3 class="question-title">1. 遺産の総額を選択してください</h3>
+        <select id="asset-amount" class="sim-select">
+            <option value="5000">5,000万円未満</option>
+            <option value="7000">5,000万円～7,000万円未満</option>
+            <option value="10000" selected>7,000万円～1億円未満</option>
+            <option value="15000">1億円～1.5億円未満</option>
+            <option value="20000">1.5億円～2億円未満</option>
+            <option value="25000">2億円～2.5億円未満</option>
+            <option value="30000">2億円～3億円未満</option>
+            <option value="50000">3億円～5億円未満</option>
+            <option value="50001">5億円以上</option>
+        </select>
+    </div>
+
+<div class="sim-question">
+                <h3 class="question-title">2. 加算報酬の項目を選択・入力してください</h3>
+                
+                <div class="addon-container">
+                    <div class="addon-item">
+                        <label for="add-land">土地評価（路線価）</label>
+                        <select id="add-land" class="sim-select-small">
+                            <option value="0">0利用区分</option><option value="1">1利用区分</option><option value="2">2利用区分</option><option value="3">3利用区分</option><option value="4">4利用区分</option><option value="5">5利用区分以上</option>
+                        </select>
+                    </div>
+                    <div class="addon-item">
+                        <label for="add-unlisted-stock">非上場株式評価</label>
+                        <select id="add-unlisted-stock" class="sim-select-small">
+                            <option value="0">0社</option><option value="1">1社</option><option value="2">2社</option><option value="3">3社以上</option>
+                        </select>
+                    </div>
+                    <div class="addon-item">
+                        <label for="add-listed-stock">上場株式評価</label>
+                        <select id="add-listed-stock" class="sim-select-small">
+                            <option value="0">0銘柄</option><option value="1">1～5銘柄</option><option value="2">6～10銘柄</option><option value="3">11銘柄以上</option>
+                        </select>
+                    </div>
+                    <div class="addon-item">
+                        <label for="add-bank-accounts">預貯金口座数</label>
+                        <select id="add-bank-accounts" class="sim-select-small">
+                            <option value="0">0口座</option><option value="1">1～5口座</option><option value="2">6口座以上</option>
+                        </select>
+                    </div>
+                    <div class="addon-item">
+                        <label for="add-heirs">相続人の人数</label>
+                        <select id="add-heirs" class="sim-select-small">
+                            <option value="0">1人</option><option value="1">2人</option><option value="2">3人</option><option value="3">4人</option><option value="4">5人以上</option>
+                        </select>
+                    </div>
+                    <div class="addon-item">
+                        <label>書面添付制度  ※原則「あり」</label>
+                        <div class="radio-group-small">
+                            <input type="radio" name="shomen" value="yes" id="shomen_yes" checked><label for="shomen_yes">あり</label>
+                            <input type="radio" name="shomen" value="no" id="shomen_no"><label for="shomen_no">なし</label>
+                        </div>
+                    </div>
+                    <div class="addon-item">
+                        <label>遺産分割協議書作成</label>
+                        <div class="radio-group-small">
+                            <input type="radio" name="agreement" value="yes" id="agreement_yes"><label for="agreement_yes">あり</label>
+                            <input type="radio" name="agreement" value="no" id="agreement_no" checked><label for="agreement_no">なし</label>
+                        </div>
+                    </div>
+                    <div class="addon-item">
+                        <label>準確定申告</label>
+                        <div class="radio-group-small">
+                            <input type="radio" name="quasi" value="yes" id="quasi_yes"><label for="quasi_yes">あり</label>
+                            <input type="radio" name="quasi" value="no" id="quasi_no" checked><label for="quasi_no">なし</label>
+                        </div>
+                    </div>
+                    <div class="addon-item">
+                        <label>緊急対応加算（申告期限3ヶ月未満）</label>
+                        <div class="radio-group-small">
+                            <input type="radio" name="urgent" value="yes" id="urgent_yes"><label for="urgent_yes">あり</label>
+                            <input type="radio" name="urgent" value="no" id="urgent_no" checked><label for="urgent_no">なし</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <div id="inheritance-sim-results" class="sim-results-box">
+        <div id="sim-results">
+        <h3 class="results-title">相続税申告 報酬お見積額（税抜）</h3>
+        <div class="results-grid">
+            <div class="result-item">
+                <p class="result-label">基本報酬</p>
+                <p class="result-value" id="inheritance-result-base">¥0</p>
+            </div>
+            <div class="result-item">
+                <p class="result-label">加算報酬</p>
+                <p class="result-value" id="inheritance-result-add">¥0</p>
+            </div>
+        </div>
+        <div class="result-total">
+            <p class="result-label">合計お見積り額</p>
+            <p class="result-value-total" id="inheritance-result-total">¥0</p>
+        </div>
+        <p class="results-note">※土地評価（倍率地域）、建物評価は基本報酬に含まれます。その他特殊事情がある場合は別途お見積りいたします。</p>
+    </div>
+    <div id="sim-results">
+</div>
+</main>
+
+<section class="pre-footer-contact-section fade-in fade-in-up">
+    <div class="pre-footer-wrapper">
+        <div class="pre-footer-col">
+            <div class="info-logo">
+                <a href="index.html">
+                    <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                    <h4>税理士法人notte</h4>
+                </a>
+            </div>
+            <p>
+                〒060-0052<br>
+                北海道札幌市中央区南２条東２丁目１６番地  堀尾ビル
+            </p>
+            <p>
+                電話番号: 090-7251-3756
+            </p>
+        </div>
+        <div class="pre-footer-col">
+            <h4 class="pre-footer-title">アクセスマップ</h4>
+            <div class="map-container-small">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.134043329485!2d141.3570381752392!3d43.05964829061886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29e33e00c753%3A0x1a92e5182ef7805a!2z56iO55CG5aOr5rOV5Lq6bm90dGU!5e0!3m2!1sja!2sjp!4v1750373566628!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="pre-footer-col contact-col">
+            <h4 class="pre-footer-title">お問い合わせ</h4>
+            <p class="tel-number">
+                <a href="tel:090-7251-3756">090-7251-3756</a>
+            </p>
+            <p class="reception-time">受付時間：平日9:00～17:00</p>
+            <a href="contact.html" class="reason-button">メールでのお問い合わせ ></a>
+        </div>
+    </div>
+</section>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">
+            <p>© 2025 Tax Accountant Office notte All rights reserved. </p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-buttons">
+        <a href="tel:090-7251-3756" class="sticky-tel-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+            <span>電話でのご相談</span>
+        </a>
+<a href="contact.html" class="sticky-mail-button">
+    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+    <span>メールでのご相談</span>
+</a>
+    </div>
+    <div class="side-sticky-buttons">
+        </div>
+
+    <a href="#" id="page-top-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+    </a>
+    
+<script>
+    // --- ハンバーガーメニューの制御 ---
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const globalNav = document.getElementById('global-nav');
+    if (hamburgerButton && globalNav) {
+        hamburgerButton.addEventListener('click', () => {
+            hamburgerButton.classList.toggle('is-active');
+            globalNav.classList.toggle('is-open');
+        });
+    }
+
+    // --- 追従ボタンの表示・非表示を制御（改善版） ---
+    const sideButtons = document.querySelector('.side-sticky-buttons');
+    const pageTopButton = document.getElementById('page-top-button');
+    const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper');
+    const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close');
+
+    // スクロールイベントで、各ボタンが存在すれば表示・非表示を切り替える
+    window.addEventListener('scroll', () => {
+        const shouldShow = window.scrollY > 100;
+        
+        if (sideButtons) {
+            sideButtons.classList.toggle('show', shouldShow);
+        }
+        if (pageTopButton) {
+            pageTopButton.classList.toggle('show', shouldShow);
+        }
+        if (priceCtaWrapper) {
+            priceCtaWrapper.classList.toggle('show', shouldShow);
+        }
+    });
+
+    // トップへ戻るボタンのクリック処理
+    if (pageTopButton) {
+        pageTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // 閉じるボタンのクリック処理
+    if (priceCtaCloseBtn && priceCtaWrapper) {
+        priceCtaCloseBtn.addEventListener('click', () => {
+            priceCtaWrapper.style.display = 'none';
+        });
+    }
+
+    // --- スクロールアニメーションの制御 ---
+    const fadeInTargets = document.querySelectorAll('.fade-in');
+    if (fadeInTargets.length > 0) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        fadeInTargets.forEach(target => {
+            observer.observe(target);
+        });
+    }
+
+
+/* ▼▼▼ この料金シミュレーションのスクリプトを、まるごと置き換えてください ▼▼▼ */
+document.addEventListener('DOMContentLoaded', function() {
+    const simulator = document.getElementById('fee-simulator');
+    if (!simulator) return;
+
+    // --- 要素を取得 ---
+    const allInputs = simulator.querySelectorAll('input[type="radio"], select');
+    const bookkeepingRadios = simulator.querySelectorAll('input[name="bookkeeping"]');
+    const bookkeepingDetails = document.getElementById('bookkeeping-details');
+    
+    const resultMonthlyEl = document.getElementById('result-monthly');
+    const resultAnnualFilingEl = document.getElementById('result-annual-filing');
+    const resultTotalYearEl = document.getElementById('result-total-year');
+
+    // --- 計算関数 ---
+    function calculateFee() {
+        // --- 選択された値を取得 ---
+        const meetingValue = parseFloat(simulator.querySelector('input[name="meeting_type"]:checked').value);
+        
+        const salesOptionValue = simulator.querySelector('select[name="sales_range"]').value;
+        const [baseMonthlyFee, annualFilingFee] = salesOptionValue.split('_').map(Number);
+        
+        const isBookkeepingNeeded = simulator.querySelector('input[name="bookkeeping"]:checked').value === 'yes';
+        
+        let bookkeepingFee = 0;
+        if (isBookkeepingNeeded) {
+            const transactionVolume = parseFloat(simulator.querySelector('select[name="transaction_volume"]').value);
+            bookkeepingFee = transactionVolume * 50; // 1仕訳あたり50円で計算
+        }
+
+        // --- 料金計算 ---
+        const finalMonthlyFee = baseMonthlyFee + meetingValue + bookkeepingFee;
+        const totalYearFee = (finalMonthlyFee * 12) + annualFilingFee;
+        
+        // --- 結果を表示 ---
+        const formatter = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' });
+        resultMonthlyEl.textContent = formatter.format(finalMonthlyFee);
+        resultAnnualFilingEl.textContent = formatter.format(annualFilingFee);
+        resultTotalYearEl.textContent = formatter.format(totalYearFee);
+    }
+
+    // --- 記帳代行の詳細表示/非表示の制御 ---
+    bookkeepingRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'yes') {
+                bookkeepingDetails.style.display = 'block';
+            } else {
+                bookkeepingDetails.style.display = 'none';
+            }
+            calculateFee(); // 表示/非表示の変更時にも再計算
+        });
+    });
+
+    // --- その他の選択肢が変更されたら再計算 ---
+    allInputs.forEach(input => {
+        if (input.name !== 'bookkeeping') { // bookkeepingは専用のリスナーで制御
+            input.addEventListener('change', calculateFee);
+        }
+    });
+
+    // --- 初期表示 ---
+    calculateFee();
+});
+/* ▲▲▲ ここまでを置き換え ▲▲▲ */
+
+/* ▼▼▼ この相続税シミュレーションの計算ロジックを、まるごと置き換え ▼▼▼ */
+// --- ここから【最新版】相続税報酬シミュレーションの計算ロジック ---
+const inheritanceSimulator = document.getElementById('inheritance-simulator');
+if (inheritanceSimulator) {
+
+    // --- 料金設定 ---
+    const INHERITANCE_FEES = {
+        base: {
+            5000: 400000, 7000: 450000, 10000: 600000, 15000: 750000, 
+            20000: 1000000, 25000: 1200000, 30000: 1400000, 50000: 2000000, 50001: 0
+        },
+        addons: {
+            land: 50000,
+            unlistedStock: 150000,
+            listedStock: 10000,
+            bankAccounts: 10000,
+            heir: 50000,
+            shomen: 100000,
+            agreement: 50000,
+            quasiFinal: 50000
+        }
+    };
+
+    // --- 要素を取得 ---
+    const allInputs = inheritanceSimulator.querySelectorAll('select, input[type="radio"]');
+    const resultBaseEl = document.getElementById('inheritance-result-base');
+    const resultAddEl = document.getElementById('inheritance-result-add');
+    const resultTotalEl = document.getElementById('inheritance-result-total');
+
+    // --- 計算関数 ---
+    const calculateInheritanceFees = () => {
+        // 1. 基本報酬
+        const assetValue = parseInt(document.getElementById('asset-amount').value, 10);
+        let baseFee = INHERITANCE_FEES.base[assetValue] || 0;
+        if (assetValue === 50001) resultBaseEl.textContent = "別途お見積";
+
+        // 2. 加算報酬
+        let additionalFee = 0;
+        additionalFee += parseInt(document.getElementById('add-land').value, 10) * INHERITANCE_FEES.addons.land;
+        additionalFee += parseInt(document.getElementById('add-unlisted-stock').value, 10) * INHERITANCE_FEES.addons.unlistedStock;
+        additionalFee += parseInt(document.getElementById('add-listed-stock').value, 10) * INHERITANCE_FEES.addons.listedStock;
+        additionalFee += parseInt(document.getElementById('add-bank-accounts').value, 10) * INHERITANCE_FEES.addons.bankAccounts;
+        additionalFee += parseInt(document.getElementById('add-heirs').value, 10) * INHERITANCE_FEES.addons.heir;
+        
+        if (document.querySelector('input[name="shomen"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.shomen;
+        if (document.querySelector('input[name="agreement"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.agreement;
+        if (document.querySelector('input[name="quasi"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.quasiFinal;
+        if (document.querySelector('input[name="urgent"]:checked').value === 'yes') additionalFee += baseFee * 0.2;
+
+        // 3. 合計
+        const totalFee = baseFee + additionalFee;
+
+        // 4. 結果表示
+        const formatter = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' });
+        if (assetValue !== 50001) resultBaseEl.textContent = formatter.format(baseFee);
+        resultAddEl.textContent = formatter.format(additionalFee);
+        resultTotalEl.textContent = (assetValue === 50001) ? "別途お見積" : formatter.format(totalFee);
+    };
+
+    allInputs.forEach(el => el.addEventListener('change', calculateInheritanceFees));
+    calculateInheritanceFees();
+}
+    </script>
+</body>
+</html>

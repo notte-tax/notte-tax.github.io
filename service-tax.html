@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>税理士法人notte - 札幌市の税理士法人</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <meta property="og:url" content="https://notte-tax-website.web.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="税理士法人notte - 札幌市の税理士法人" />
+    <meta property="og:description" content="札幌市中央区の税理士法人notteです。クラウド会計導入支援、税務顧問、相続対策など、お客様のビジネスをサポートします。" />
+    <meta property="og:site_name" content="税理士法人notte" />
+    <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+        /* 項目間のスペースを調整 */
+        .feature-item:not(:last-child) {
+            margin-bottom: 100px; /* これはreason.html用のスタイルです */
+        }
+
+        /* 偶数番目(2番目)の背景色を変更 */
+        .feature-item:nth-child(even) {
+            background-color: #f9f9f9; /* これもreason.html用のスタイルです */
+        }
+
+        /* ▼▼▼ ここから追記 ▼▼▼ */
+        /* サービス詳細ページの各セクション間にスペースを追加 */
+        .service-detail-page > section:not(:last-child) {
+            margin-bottom: 80px; /* この数値を変更すると間隔を調整できます */
+        }
+        * ▼▼▼ ここから追記 ▼▼▼ */
+        /* ページ上部の概要文を中央ぞろえにする */
+        .service-summary {
+            text-align: center;
+        }
+        /* ▼▼▼ ここから追記 ▼▼▼ */
+        /* 最初のセクションを除く、すべてのセクションの上部に線と余白を追加 */
+        .page-content > section:not(:first-child) {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid #e8e8e8;
+        }
+    </style>    
+    </head>
+    <body>
+    <body class="page-service-tax">
+
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                    <h1>税理士法人notte</h1>
+                </a>
+            </div>
+            <div class="header-right-content">
+                <div class="header-contact">
+                    <div class="header-tel">
+                        <svg class="icon-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        <a href="tel:090-7251-3756">
+                            <span>090-7251-3756</span>
+                        </a>
+                    </div>
+                    <div class="header-reception-time">受付時間：平日9:00～17:00</div>
+                </div>
+                <a href="contact.html" class="header-cta-button">
+                    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>お問い合わせ ></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sticky-header-container">
+        <nav class="global-nav" id="global-nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">事務所概要・アクセス</a></li>
+                <li><a href="staff.html">スタッフ紹介</a></li>
+                <li class="has-submenu">
+                    <a href="services.html">サービス内容</a>
+                    <ul class="submenu">
+                        <li><a href="service-tax.html">税務顧問</a></li>
+                        <li><a href="service-mf.html">MFクラウド会計の導入支援</a></li>
+                        <li><a href="service-startup.html">会社設立・スタートアップ支援</a></li>
+                        <li><a href="service-inheritance.html">相続税申告・相続対策（相続専門サイト）</a></li>
+                    </ul>
+                </li>
+                <li><a href="service-inheritance.html">相続専門サイト</a></li>
+                <li><a href="price.html">料金表</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="news.html">お知らせ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <h1>税務顧問</h1>
+        </div>
+        <div class="page-content service-detail-page">
+            <section class="service-summary fade-in fade-in-up">
+                <h2>お客様の最も身近な相談相手として、<br>ビジネスの成長を継続的にサポートします。</h2>
+                <p>
+                    税理士法人notteの税務顧問サービスは、単なる記帳代行や申告書作成にとどまりません。<br>
+                    月次でのご訪問またはオンラインでの面談を通じて、最新の経営状況を分かりやすくご報告し、会計・税務のプロとして、お客様のビジネスが抱える課題の解決と、さらなる成長を力強くサポートします。
+                </p>
+            </section>
+            <section class="service-recommend fade-in fade-in-up">
+                <h3>こんな方におすすめです</h3>
+                <ul>
+                    <li>日々の経理や税金のことで気軽に相談できる相手がほしい</li>
+                    <li>ITツールを導入して経理を効率化し、本業に集中したい</li>
+                    <li>定期的に経営状況を把握し、タイムリーな節税対策を行いたい</li>
+                    <li>銀行融資や資金繰りについても、専門的なアドバイスがほしい</li>
+                </ul>
+            </section>
+            <section class="service-content-detail fade-in fade-in-up">
+                <h3>主なサービス内容</h3>
+                <div class="content-block">
+                    <h4>月次訪問・月次監査</h4>
+                    <p>会計帳簿の正確性をチェックし、試算表を元に経営成績や財政状態をご報告します。問題点の早期発見と、将来の予測に役立ちます。</p>
+                </div>
+                <div class="content-block">
+                    <h4>決算・税務申告</h4>
+                    <p>法人税・所得税・消費税などの各種申告書を作成し、電子申告（e-Tax）にて提出を代行します。</p>
+                </div>
+                <div class="content-block">
+                    <h4>節税対策・タックスプランニング</h4>
+                    <p>決算予測に基づき、合法的な節税対策をタイムリーにご提案します。役員報酬の最適化や、税制優遇の活用など、お客様に合わせたプランニングを行います。</p>
+                </div>
+            </section>
+
+<section class="workflow-diagram service-content-detail fade-in fade-in-up">
+    <h3>業務フロー（顧問契約）</h3>
+
+    <h4 class="workflow-pattern-title">ケース1：お客様が会計データを入力する場合（自社記帳）</h4>
+    <ol class="workflow-list">
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 1</span>
+                <h4>クライアント：月次データの入力完了のご連絡</h4>
+                <p>銀行口座やクレジットカードの取引明細、領収書や請求書などの会計データをクラウド会計ソフトへご入力いただきます。入力が完了しましたら、当事務所が提供する電子会議室などを通じて、その旨をお知らせください。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 2</span>
+                <h4>notte：月次監査の開始と試算表の作成</h4>
+                <p>ご連絡を受け次第、当事務所スタッフが月次監査に着手します。ご入力いただいたデータに異常な取引や法的な論点がないか、会計基準に照らして正確かなどを多角的にチェックし、企業の健康診断書ともいえる「月次試算表」を速やかに作成します。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 3</span>
+                <h4>notte：質問・確認事項のご連絡</h4>
+                <p>監査の過程で生じた不明な取引や、処理内容の確認が必要な事項については、電子会議室などを通じて具体的にお伺いします。お客様との対話を通じて事実確認を徹底し、信頼性の高い会計帳簿を共同で作り上げていく、重要なプロセスです。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 4</span>
+                <h4>notte：監査結果のご報告</h4>
+                <p>完成した月次試算表を基に、前月比・前年同月比での業績推移の状況などを分かりやすくご報告します。「経営に活かせる情報」として提供することで、お客様の次の戦略立案をサポートします。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 5</span>
+                <h4>クライアント ＆ notte：定例ミーティングの実施</h4>
+                <p>月次報告の場では、単なる結果報告だけでなく、今後の節税対策、資金調達の計画、設備投資のタイミングといった、未来に向けた経営課題について深く議論します。経営のパートナーとしてお客様に寄り添い、共に考え、次月への具体的なアクションプランを明確にすることで、継続的な事業成長を支援します。</p>
+            </div>
+        </li>
+    </ol>
+
+    <h4 class="workflow-pattern-title">ケース2：当事務所が会計データを入力する場合（記帳代行）</h4>
+    <ol class="workflow-list">
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 1</span>
+                <h4>クライアント：資料のご提出</h4>
+                <p>領収書、請求書、通帳のコピーなど、会計データの入力に必要な資料（証憑）を、電子データ（スキャン、写真など）、訪問時に回収または郵送にて当事務所にご提出いただきます。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 2</span>
+                <h4>notte：会計データの入力（記帳代行）</h4>
+                <p>お預かりした資料に基づき、当事務所の専門スタッフが正確かつ迅速に会計データを入力します。お客様は煩雑な入力作業から解放され、本業に専念いただけます。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 3</span>
+                <h4>notte：質問・確認事項のご連絡</h4>
+                <p>入力内容について不明な点があれば、電子会議室などを通じて的確にご質問します。お客様との対話を通じて事実確認を徹底し、信頼性の高い会計帳簿を作成します。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 4</span>
+                <h4>notte：記帳結果のご報告と経営分析</h4>
+                <p>完成した月次試算表を基に、前月比・前年同月比での業績推移の状況などを分かりやすくご報告します。「経営に活かせる情報」として提供することで、お客様の次の戦略立案をサポートします。</p>
+            </div>
+        </li>
+        <li>
+            <div class="workflow-box">
+                <span class="workflow-step-number">STEP 5</span>
+                <h4>クライアント ＆ notte：定例ミーティングの実施</h4>
+                <p>月次報告の場では、単なる結果報告だけでなく、今後の節税対策、資金調達の計画、設備投資のタイミングといった、未来に向けた経営課題について深く議論します。経営のパートナーとしてお客様に寄り添い、共に考え、次月への具体的なアクションプランを明確にすることで、継続的な事業成長を支援します。</p>
+            </div>
+        </li>
+    </ol>
+</section>
+
+<section class="service-flow fade-in fade-in-up">
+    <h3>ご契約までの流れ</h3>
+    <ol class="flow-steps">
+        <li>
+            <div class="flow-step-content-wrapper">
+                <div class="flow-step-header">
+                    <span class="flow-step-number">STEP 01</span>
+                    <h4 class="flow-step-title">お問い合わせ</h4>
+                </div>
+                <p class="flow-step-description">まずはお問い合わせフォーム、またはお電話にてお気軽にご連絡ください。</p>
+            </div>
+        </li>
+        <li>
+            <div class="flow-step-content-wrapper">
+                <div class="flow-step-header">
+                    <span class="flow-step-number">STEP 02</span>
+                    <h4 class="flow-step-title">初回無料相談</h4>
+                </div>
+                <p class="flow-step-description">お客様の現状の課題やご要望を詳しくヒアリングさせていただきます。（オンライン対応可）</p>
+            </div>
+        </li>
+        <li>
+            <div class="flow-step-content-wrapper">
+                <div class="flow-step-header">
+                    <span class="flow-step-number">STEP 03</span>
+                    <h4 class="flow-step-title">ご提案・お見積り</h4>
+                </div>
+                <p class="flow-step-description">ヒアリング内容に基づき、お客様に最適なサービスプランとお見積りをご提示します。</p>
+            </div>
+        </li>
+        <li>
+            <div class="flow-step-content-wrapper">
+                <div class="flow-step-header">
+                    <span class="flow-step-number">STEP 04</span>
+                    <h4 class="flow-step-title">ご契約</h4>
+                </div>
+                <p class="flow-step-description">ご提案内容にご納得いただけましたら、顧問契約を締結させていただきます。</p>
+            </div>
+        </li>
+    </ol>
+</section>
+        </div>
+    </main>
+
+    <section class="pre-footer-contact-section fade-in fade-in-up">
+        <div class="pre-footer-wrapper">
+            <div class="pre-footer-col">
+                <div class="info-logo">
+                    <a href="index.html">
+                        <img src="アートボード 2.png" alt="税理士法人notte ロゴ">
+                        <h4>税理士法人notte</h4>
+                    </a>
+                </div>
+                <p>〒060-0052<br>北海道札幌市中央区南２条東２丁目１６番地  堀尾ビル</p>
+                <p>電話番号: 090-7251-3756</p>
+            </div>
+            <div class="pre-footer-col">
+                <h4 class="pre-footer-title">アクセスマップ</h4>
+                <div class="map-container-small">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.134043329485!2d141.3570381752392!3d43.05964829061886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29e33e00c753%3A0x1a92e5182ef7805a!2z56iO55CG5aOr5rOV5Lq6bm90dGU!5e0!3m2!1sja!2sjp!4v1750373566628!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="pre-footer-col contact-col">
+                <h4 class="pre-footer-title">お問い合わせ</h4>
+                <p class="tel-number">
+                    <a href="tel:090-7251-3756">090-7251-3756</a>
+                </p>
+                <p class="reception-time">受付時間：平日9:00～17:00</p>
+                <a href="contact.html" class="reason-button">メールでのお問い合わせ ></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">
+            <p>© 2025 Tax Accountant Office notte All rights reserved. </p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-buttons">
+        <a href="tel:090-7251-3756" class="sticky-tel-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+            <span>電話でのご相談</span>
+        </a>
+<a href="contact.html" class="sticky-mail-button">
+    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+    <span>メールでのご相談</span>
+</a>
+    </div>
+    <div id="sticky-price-cta-wrapper">
+        <button id="sticky-price-cta-close" aria-label="閉じる">×</button>
+        <a href="fee-simulation.html" id="sticky-price-cta-link">
+          <span>報酬<br>無料試算</span>
+        </a>
+    </div>
+    <a href="#" id="page-top-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+    </a>
+    <script>
+    // --- ハンバーガーメニューの制御 ---
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const globalNav = document.getElementById('global-nav');
+
+    if (hamburgerButton && globalNav) {
+        hamburgerButton.addEventListener('click', () => {
+            hamburgerButton.classList.toggle('is-active');
+            globalNav.classList.toggle('is-open');
+        });
+    }
+
+    // --- 追従ボタンの表示・非表示を制御 ---
+    const sideButtons = document.querySelector('.side-sticky-buttons');
+    const pageTopButton = document.getElementById('page-top-button');
+    const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper'); // ★ラッパーを取得
+    const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close'); // ★閉じるボタンを取得
+
+    // priceCtaWrapper も条件に追加
+    if (sideButtons && pageTopButton && priceCtaWrapper) { 
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                sideButtons.classList.add('show');
+                pageTopButton.classList.add('show');
+                priceCtaWrapper.classList.add('show');
+            } else {
+                sideButtons.classList.remove('show');
+                pageTopButton.classList.remove('show');
+                priceCtaWrapper.classList.remove('show');
+            }
+        });
+        pageTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ★閉じるボタンのクリック処理
+    if(priceCtaCloseBtn && priceCtaWrapper) {
+        priceCtaCloseBtn.addEventListener('click', () => {
+            priceCtaWrapper.style.display = 'none'; // ボタンのラッパーごと非表示にする
+        });
+    }
+
+    // --- スクロールアニメーションの制御 ---
+    const fadeInTargets = document.querySelectorAll('.fade-in');
+    if (fadeInTargets.length > 0) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInTargets.forEach(target => {
+            observer.observe(target);
+        });
+    }
+</script>
+
+</body>
+</html>
