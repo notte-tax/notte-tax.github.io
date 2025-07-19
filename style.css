@@ -2006,6 +2006,8 @@ html {
     display: flex;
     justify-content: center;
     gap: 20px;
+    position: relative; /* 重なり順を制御するために必要 */
+    z-index: 10;
     margin-top: 30px;
     margin-bottom: 50px;
 }
@@ -2025,14 +2027,17 @@ html {
     line-height: 1.4;
     border-radius: 8px;
     border: 2px solid #1caac3;
-    transition: all 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 }
 
 .page-nav-button:hover {
+    /* 少し上に移動させる */
+    transform: translateY(-5px);
     background-color: #ffffff;
     color: #1caac3;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* 影の値を animated-cta-button に近づけます */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* 影の値を animated-cta-button に近づけます */
 }
 
 /* =====【追加】シミュレーター間の区切り線のスタイル ===== */
@@ -3976,7 +3981,9 @@ html {
 .page-price .page-header,
 .page-recruit .page-header,
 .page-services .page-header,
-.page-staff .page-header {
+.page-staff .page-header,
+.page-fee-simulation .page-header,
+.page-contact .page-header { /* ← .page-contact を追加 */
     padding: 120px 40px;
     color: white;
     border-bottom: none;
@@ -3992,7 +3999,9 @@ html {
 .page-price .page-header::before,
 .page-recruit .page-header::before,
 .page-services .page-header::before,
-.page-staff .page-header::before {
+.page-staff .page-header::before,
+.page-fee-simulation .page-header::before,
+.page-contact .page-header::before { /* ← ここにも追加 */
     content: '';
     position: absolute;
     top: 0;
@@ -4009,10 +4018,22 @@ html {
 .page-price .page-header h1,
 .page-recruit .page-header h1,
 .page-services .page-header h1,
-.page-staff .page-header h1 {
+.page-staff .page-header h1,
+.page-fee-simulation .page-header h1,
+.page-contact .page-header h1 { /* ← ここにも追加 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+/* 各ページ固有の背景画像を指定 */
+/* ... 既存のルールはそのまま ... */
+.page-staff .page-header {
+    background-image: url('staff.jpg');
+}
+
+/* ▼▼▼ このルールを新しく追加 ▼▼▼ */
+.page-fee-simulation .page-header {
+    background-image: url('fee-simulation.jpg'); /* 添付された画像を指定 */
+}
 /* 各ページ固有の背景画像を指定 */
 .page-about .page-header {
     background-image: url('place.jpg');
@@ -4032,6 +4053,13 @@ html {
 .page-staff .page-header {
     background-image: url('staff.jpg');
 }
+.page-fee-simulation .page-header {
+    background-image: url('fee-simulation.jpg'); /* 添付された画像を指定 */
+}
+.page-contact .page-header {
+    background-image: url('contact.jpg');
+}
+
 
 /* 新しい戻るボタンのスタイル */
 .back-to-recruit-button {
