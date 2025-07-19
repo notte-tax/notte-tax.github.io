@@ -1441,7 +1441,7 @@ a.service-item-link:hover .service-item {
         display: block;
         grid-template-columns: none;
         width: 100%;
-        padding: 80px 0 40px 0;
+        padding: 40px 0 40px 0;
     }
     .global-nav > ul > li {
         border-left: none;
@@ -1454,7 +1454,7 @@ a.service-item-link:hover .service-item {
     .global-nav li a {
         font-size: 16px;
         font-weight: normal;
-        padding: 18px 25px;
+        padding: 14px 25px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
