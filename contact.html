@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WD1P51EME"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,6 +23,104 @@
     <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
     
     <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+/* --- 自作プルダウンのスタイル --- */
+
+/* 送信用のselectを非表示に */
+.real-select {
+  display: none;
+}
+
+/* 全体を囲むラッパー */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* 表示部分 */
+.custom-select {
+  position: relative;
+  font-size: 1em;
+}
+
+/* トリガー（普段見えている部分） */
+.custom-select-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 選択肢リストが開いている時のトリガーのスタイル */
+.custom-select.open .custom-select-trigger {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: transparent;
+}
+
+/* プレースホルダーの文字色 */
+.custom-select-trigger span {
+  color: #757575;
+}
+.custom-select-trigger.selected span {
+  color: #000;
+}
+
+/* 矢印 */
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #007CB2;
+  transition: all 0.3s;
+}
+
+/* 開いている時の矢印（180度回転させて上向きにする） */
+.custom-select.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* 選択肢リスト */
+.custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #fff;
+  z-index: 2;
+  display: none; /* JSで表示を切り替え */
+  max-height: 200px;
+  overflow-y: auto;
+}
+.custom-select.open .custom-options {
+  display: block;
+}
+
+/* 個々の選択肢 */
+.custom-option {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  color: #000;
+}
+.custom-option:hover {
+  background-color: #f0f0f0;
+}
+        
+    </style>
     </head>
     <body>
 
@@ -67,7 +164,6 @@
                 <li><a href="index.html">TOP</a></li>
                 <li><a href="about.html">事務所概要・アクセス</a></li>
                 <li><a href="staff.html">スタッフ紹介</a></li>
-                <li><a href="reason.html">選ばれる理由</a></li>
                 <li class="has-submenu">
                     <a href="services.html">サービス内容</a>
                     <ul class="submenu">
@@ -116,7 +212,26 @@
 
     <div class="form-group">
         <label for="subject">件名 <span class="required-badge">必須</span></label>
-        <input type="text" id="subject" name="件名" required placeholder="例：税務顧問について">
+
+        <div class="custom-select-wrapper">
+            <div class="custom-select">
+                <div class="custom-select-trigger">
+                    <span>選択してください</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="custom-options">
+                    <span class="custom-option" data-value="税務顧問について">税務顧問について</span>
+                    <span class="custom-option" data-value="相続税申告について">相続税申告について</span>
+                    <span class="custom-option" data-value="その他">その他</span>
+                </div>
+            </div>
+            <select id="subject" name="件名" class="real-select" required>
+                <option value="" disabled selected></option>
+                <option value="税務顧問について">税務顧問について</option>
+                <option value="相続税申告について">相続税申告について</option>
+                <option value="その他">その他</option>
+            </select>
+        </div>
     </div>
 
     <div class="form-group">
@@ -166,29 +281,53 @@
     </div>
 </footer>
 
-    <div class="side-sticky-buttons">
-        <a href="tel:090-7251-3756" class="sticky-tel-button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
-            <span>電話でのご相談</span>
-        </a>
-<a href="contact.html" class="sticky-mail-button">
-    <svg class="icon-mail" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-        <polyline points="22,6 12,13 2,6"></polyline>
-    </svg>
-    <span>メールでのご相談</span>
-</a>
-    </div>
-    <div id="sticky-price-cta-wrapper">
-        <button id="sticky-price-cta-close" aria-label="閉じる">×</button>
-        <a href="fee-simulation.html" id="sticky-price-cta-link">
-          <span>報酬<br>無料試算</span>
-        </a>
-    </div>
     <a href="#" id="page-top-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
     </a>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const customSelect = document.querySelector('.custom-select');
+    if (customSelect) {
+        const trigger = customSelect.querySelector('.custom-select-trigger');
+        const options = customSelect.querySelector('.custom-options');
+        const customOptions = customSelect.querySelectorAll('.custom-option');
+        const realSelect = document.querySelector('.real-select');
+        const triggerSpan = trigger.querySelector('span');
+
+        // トリガーをクリックしたら選択肢リストを開閉
+        trigger.addEventListener('click', function() {
+            customSelect.classList.toggle('open');
+        });
+
+        // 選択肢をクリックした時の処理
+        customOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+
+                // 見た目を更新
+                triggerSpan.textContent = value;
+                trigger.classList.add('selected');
+
+                // 裏側の本物のselectの値を更新
+                realSelect.value = value;
+                
+                // 必須バリデーションのためにchangeイベントを発火
+                const changeEvent = new Event('change');
+                realSelect.dispatchEvent(changeEvent);
+
+                // 選択肢リストを閉じる
+                customSelect.classList.remove('open');
+            });
+        });
+
+        // 外側をクリックしたら選択肢リストを閉じる
+        document.addEventListener('click', function(e) {
+            if (!customSelect.contains(e.target)) {
+                customSelect.classList.remove('open');
+            }
+        });
+    }
+});
         // --- ハンバーガーメニューの制御 ---
         const hamburgerButton = document.getElementById('hamburger-button');
         const globalNav = document.getElementById('global-nav');
@@ -199,9 +338,8 @@
                 globalNav.classList.toggle('is-open');
             });
         }
-        /* ▼▼▼ ここからコードを追加 ▼▼▼ */
+        
         // --- オーバーレイ（メニュー外）クリックでメニューを閉じる ---
-        // 1. オーバーレイ用の要素を作成してbodyに追加
         const overlay = document.createElement('div');
         overlay.style.position = 'fixed';
         overlay.style.top = '0';
@@ -209,14 +347,12 @@
         overlay.style.width = '100%';
         overlay.style.height = '100%';
         overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        overlay.style.zIndex = '1399'; // メニュー(1400)より手前
-        overlay.style.display = 'none'; // 最初は非表示
+        overlay.style.zIndex = '1399'; 
+        overlay.style.display = 'none'; 
         document.body.appendChild(overlay);
 
-        // 2. ハンバーガーボタンクリック時の処理を更新
         if (hamburgerButton && globalNav && overlay) {
             hamburgerButton.addEventListener('click', () => {
-                // is-openクラスがある（メニューが開いた）かどうかで表示を切り替える
                 if (globalNav.classList.contains('is-open')) {
                     overlay.style.display = 'block';
                 } else {
@@ -224,66 +360,63 @@
                 }
             });
 
-            // 3. オーバーレイがクリックされた時の処理
             overlay.addEventListener('click', () => {
                 hamburgerButton.classList.remove('is-active');
                 globalNav.classList.remove('is-open');
                 overlay.style.display = 'none';
             });
         }
-        /* ▲▲▲ ここまでコードを追加 ▲▲▲ */
     
-// --- 追従ボタンの表示・非表示を制御 ---
-const sideButtons = document.querySelector('.side-sticky-buttons');
-const pageTopButton = document.getElementById('page-top-button');
-const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper'); // ★IDを新しいものに変更
-const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close'); // ★閉じるボタンを取得
+        // --- 追従ボタンの表示・非表示を制御 ---
+        const pageTopButton = document.getElementById('page-top-button');
 
-// 正しいラッパー（priceCtaWrapper）を条件に追加
-if (sideButtons && pageTopButton && priceCtaWrapper) { 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            sideButtons.classList.add('show');
-            pageTopButton.classList.add('show');
-            priceCtaWrapper.classList.add('show');
-        } else {
-            sideButtons.classList.remove('show');
-            pageTopButton.classList.remove('show');
-            priceCtaWrapper.classList.remove('show');
-        }
-    });
-    pageTopButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-// ★【追加】閉じるボタンのクリック処理
-if(priceCtaCloseBtn && priceCtaWrapper) {
-    priceCtaCloseBtn.addEventListener('click', () => {
-        priceCtaWrapper.style.display = 'none'; // ボタンのラッパーごと非表示にする
-    });
-}
-
-    /* --- スクロールアニメーションの制御 --- */
-    const fadeInTargets = document.querySelectorAll('.fade-in');
-    if (fadeInTargets.length > 0) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+        if (pageTopButton) { 
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    pageTopButton.classList.add('show');
+                } else {
+                    pageTopButton.classList.remove('show');
                 }
             });
-        }, {
-            threshold: 0.1 // 要素が10%見えたら実行
-        });
+            pageTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
-        fadeInTargets.forEach(target => {
-            observer.observe(target);
-        });
-    }
-</script>
+        // --- スクロールアニメーションの制御 ---
+        const fadeInTargets = document.querySelectorAll('.fade-in');
+        if (fadeInTargets.length > 0) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 
+            });
+
+            fadeInTargets.forEach(target => {
+                observer.observe(target);
+            });
+        }
+        
+        // --- 件名プルダウンの色を変更する処理 ---
+        const subjectSelect = document.getElementById('subject');
+        if (subjectSelect) {
+            // 初期状態で文字色を赤にする
+            if (subjectSelect.value === "") {
+                subjectSelect.classList.add('placeholder');
+            }
+            // 選択が変更された時の処理
+            subjectSelect.addEventListener('change', function() {
+                // 何かが選択されたら、placeholderクラスを削除して文字色をデフォルトに戻す
+                this.classList.remove('placeholder');
+            });
+        }
+    </script>
 
 </body>
 </html>
