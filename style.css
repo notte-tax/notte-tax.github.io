@@ -4115,3 +4115,44 @@ html {
 .site-footer a:hover {
     text-decoration: underline; /* マウスオンで下線を表示 */
 }
+
+/* ==================================
+   ポリシーページ等のヘッダー画像設定
+   ================================== */
+
+/* 背景画像を持つヘッダーに共通のスタイル */
+.page-disclaimer .page-header,
+.page-terms .page-header,
+.page-privacy .page-header,
+.page-harassment .page-header {
+    padding: 120px 40px;
+    color: white;
+    border-bottom: none;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* 文字を読みやすくするための、半透明の黒いフィルター */
+.page-disclaimer .page-header::before,
+.page-terms .page-header::before,
+.page-privacy .page-header::before,
+.page-harassment .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* 文字に影をつけて、さらに読みやすくする */
+.page-disclaimer .page-header h1,
+.page-terms .page-header h1,
+.page-privacy .page-header h1,
+.page-harassment .page-header h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
