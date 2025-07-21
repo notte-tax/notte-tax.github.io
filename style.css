@@ -246,6 +246,7 @@ body {
     animation-fill-mode: forwards; /* アニメーション終了時の状態を維持 */
 }
 
+
 /* カバーが上に消えていくアニメーション */
 @keyframes slide-out-up {
     from {
@@ -262,6 +263,8 @@ body {
     border-radius: 8px;
     position: relative; /* z-indexを有効にするため */
     z-index: 2;
+    
+    
 }
 .hero-inner h2 {
     font-size: 3.5em;
@@ -771,10 +774,11 @@ body {
     justify-content: center;
     text-decoration: none;
     opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
+    /* ▼▼▼ 以下の2行を追加・修正 ▼▼▼ */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 影の初期状態を追加 */
+    transition: all 0.3s ease;
 }
 #page-top-button:hover {
-    opacity: 0.8;
     transform: translateY(-3px);
 }
 #page-top-button.show {
@@ -4098,4 +4102,16 @@ html {
 
 .back-to-recruit-button:hover .arrow-icon {
     transform: translateX(3px) rotate(45deg); /* ホバー時に少し移動 */
+}
+
+/* フッターのリンク文字を白にする */
+.site-footer a,
+.site-footer a:visited {
+    color: #FFFFFF; /* 文字色を白に指定 */
+    text-decoration: none; /* 通常時の下線を消す */
+}
+
+/* フッターのリンクにマウスを乗せた時のスタイル */
+.site-footer a:hover {
+    text-decoration: underline; /* マウスオンで下線を表示 */
 }
