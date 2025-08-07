@@ -1232,6 +1232,7 @@ a.service-item-link:hover .service-item {
     margin: 0;
     font-size: 1.2em;
 }
+
 /* ===============
    お問い合わせフォームのスタイル
    =============== */
@@ -2519,12 +2520,13 @@ html {
 }
 
 #animated-news-box a {
-    display: block;
+    display: flex;
     padding: 15px 20px;
     text-decoration: none;
     color: #333;
     transition: background-color 0.2s;
     font-size: 0.95em;
+    align-items: baseline; /* この行を追加 (文字の底辺を揃える) */
 }
 #animated-news-box a:hover {
     background-color: #f8f9fa;
@@ -2534,6 +2536,7 @@ html {
     margin-right: 15px;
     color: #666;
     font-size: 0.9em;
+    flex-shrink: 0; /* この行を追加 (日付が縮まないようにする) */
 }
 
 /* ===== お知らせ詳細ページ（新デザイン）===== */
@@ -3046,7 +3049,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 280px;  /* ★箱の横幅を固定して、すべてのロゴの占有幅を統一 */
+    width: 250px;  /* ★箱の横幅を固定して、すべてのロゴの占有幅を統一 */
     height: 80px;  /* 箱の高さを指定 */
     transition: transform 0.3s;
 }
@@ -3062,6 +3065,11 @@ html {
     width: auto;
     height: auto;
     border: none !important; /* ★他のスタイル設定を上書きして、枠線を強制的に削除 */
+}
+
+/* ===== GMOあおぞらネット銀行ロゴの個別調整 ===== */
+#gmo-logo img {
+    transform: scale(1.6); /* ロゴを1.2倍に拡大してバランスを取る */
 }
 
 /* ===== 相続関連詳細ページのヘッダー画像 ===== */
@@ -4156,3 +4164,4 @@ html {
 .page-harassment .page-header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
