@@ -4187,3 +4187,14 @@ html {
     height: 35px; /* アイコンの高さを指定 */
     width: auto; /* 幅は自動で調整 */
 }
+
+/* ===== お知らせのスマホ用改行 ===== */
+.br-sp {
+    display: none; /* PCでは改行を非表示 */
+}
+
+@media (max-width: 768px) {
+    .br-sp {
+        display: block; /* スマホでは改行を表示 */
+    }
+}
