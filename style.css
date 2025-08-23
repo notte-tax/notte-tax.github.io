@@ -4165,3 +4165,25 @@ html {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+/* ===== フッター：ソーシャルメディアアイコン ===== */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* アイコン間の隙間 */
+    margin-bottom: 20px; /* 下のコピーライトとの余白 */
+}
+
+.footer-social a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1); /* ホバー時に少し拡大 */
+}
+
+.footer-social img {
+    height: 35px; /* アイコンの高さを指定 */
+    width: auto; /* 幅は自動で調整 */
+}
