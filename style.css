@@ -4198,3 +4198,98 @@ html {
         display: block; /* スマホでは改行を表示 */
     }
 }
+
+/* style.css の一番下に追加 */
+
+/* ==================================
+   noteセクション（背景をグレーにする）
+   ================================== */
+.note-section {
+    background-color: #f8f9fa; /* ここでグレーを指定 */
+    padding: 120px 0;          /* 上下の余白 */
+}
+
+/* noteバナーのデザイン（前回の提案内容） */
+.note-banner-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.note-banner-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.note-banner-link:hover {
+    transform: translateY(-5px);
+}
+
+.note-content {
+    display: flex;
+    align-items: center;
+    background-color: #fff; /* バナー自体の背景は白 */
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    gap: 40px;
+}
+
+/* アイコンエリア */
+.note-logo-area {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* 必要に応じて変更 */
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+
+.note-logo-area img {
+    width: 50px; /* アイコンサイズ */
+    height: auto;
+}
+
+/* テキストエリア */
+.note-text-area {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.note-text-area h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+    color: #222;
+}
+
+.note-text-area p {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+.note-arrow {
+    display: inline-block;
+    color: #1caac3;
+    font-weight: bold;
+    border-bottom: 2px solid #1caac3;
+    padding-bottom: 2px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .note-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    .note-text-area {
+        text-align: center;
+    }
+}
