@@ -24,6 +24,20 @@
     <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
     
     <meta name="twitter:card" content="summary_large_image" />
+    
+    <style>
+        /* 写真なしスタッフのレイアウト調整（岩瀬さんとテキスト位置を揃えるため） */
+        @media screen and (min-width: 768px) {
+            .dummy-photo {
+                visibility: hidden; /* PCでは見えない枠としてサイズを確保 */
+            }
+        }
+        @media screen and (max-width: 767px) {
+            .dummy-photo {
+                display: none !important; /* スマホでは空白にならないように要素ごと消す */
+            }
+        }
+    </style>
     </head>
     <body class="page-staff">
 
@@ -91,7 +105,8 @@
     <div class="page-content">
          <div class="staff-member fade-in fade-in-up">
             <div class="staff-photo">
-                <img src="images/staff-coming-soon.jpg" alt="代表税理士 岩瀬俊太の顔写真">
+                <!-- 画像の位置を上部基準に調整するために style="object-position: top;" を追加しました -->
+                <img src="岩瀬_シャツ2.jpg" alt="代表税理士 岩瀬俊太の顔写真" style="object-position: top;">
             </div>
             <div class="staff-details">
                 <p class="staff-title">代表社員税理士</p>
@@ -113,8 +128,9 @@
         </div>
 
         <div class="staff-member fade-in fade-in-up">
-            <div class="staff-photo">
-                <img src="images/staff-coming-soon.jpg" alt="社員税理士 山田健司の顔写真">
+            <div class="staff-photo dummy-photo">
+                <!-- レイアウトを揃えるためのダミー（非表示になります） -->
+                <img src="岩瀬_シャツ2.jpg" alt="">
             </div>
             <div class="staff-details">
                 <p class="staff-title">社員税理士</p>
@@ -135,8 +151,9 @@
         </div>
 
         <div class="staff-member fade-in fade-in-up">
-            <div class="staff-photo">
-                <img src="images/staff-coming-soon.jpg" alt="マネージャー 吉田宗親の顔写真">
+            <div class="staff-photo dummy-photo">
+                <!-- レイアウトを揃えるためのダミー（非表示になります） -->
+                <img src="岩瀬_シャツ2.jpg" alt="">
             </div>
             <div class="staff-details">
                 <p class="staff-title">マネージャー</p>
@@ -193,7 +210,6 @@
             <a href="terms.html" style="margin: 0 10px;">サイトのご利用規約</a>
             <a href="harassment-policy.html" style="margin: 0 10px;">カスタマーハラスメントに対する基本方針</a>
             <p class="footer-copyright" style="margin-top: 1em;">© 2025 Tax Accountant Office notte All rights reserved.</p>
-        </div>
         </div>
     </footer>
 
