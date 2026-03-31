@@ -469,7 +469,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let bookkeepingFee = 0;
         if (isBookkeepingNeeded) {
             const transactionVolume = parseFloat(simulator.querySelector('select[name="transaction_volume"]').value);
-            bookkeepingFee = transactionVolume * 50; // 1仕訳あたり50円で計算
+            // 修正箇所：1仕訳あたり100円で計算するように変更（元は * 50）
+            bookkeepingFee = transactionVolume * 100; 
         }
 
         // --- 料金計算 ---
