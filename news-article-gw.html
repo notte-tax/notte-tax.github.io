@@ -12,21 +12,21 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お知らせ - 税理士法人notte</title>
+    <title>ゴールデンウィーク休業のお知らせ - 税理士法人notte</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" type="image/png">
 
     <meta property="og:url" content="https://notte-tax-website.web.app/news.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="お知らせ - 税理士法人notte" />
-    <meta property="og:description" content="税理士法人notteからのお知らせ一覧です。" />
+    <meta property="og:title" content="ゴールデンウィーク休業のお知らせ - 税理士法人notte" />
+    <meta property="og:description" content="税理士法人notteのゴールデンウィーク期間中の営業スケジュールについてお知らせいたします。" />
     <meta property="og:site_name" content="税理士法人notte" />
     <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
     
     <meta name="twitter:card" content="summary_large_image" />
-</head>
-<body class="page-news">
 
+</head>
+<body>
     <header class="header">
         <div class="header-inner">
             <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
@@ -60,7 +60,6 @@
             </div>
         </div>
     </header>
-
     <div class="sticky-header-container">
         <nav class="global-nav" id="global-nav">
             <ul>
@@ -85,46 +84,33 @@
     </div>
 
     <main>
-        <div class="page-header">
-            <h1>お知らせ</h1>
-        </div>
-        <div class="page-content fade-in fade-in-up">
-            <ul class="news-list">
-                <li>
-                    <a href="news-article-gw.html">
-                        <time datetime="2026-04-11">2026.04.11</time>
-                        <h3>ゴールデンウィーク休業のお知らせ</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="news-article-interview.html">
-                        <time datetime="2026-03-10">2026.03.10</time>
-                        <h3>税理士マッチングプラットフォーム「良い税理士」のインタビュー記事に掲載されました</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="news-article-note.html">
-                        <time datetime="2025-12-29">2025.12.29</time>
-                        <h3>公式note開設のお知らせ</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="news-article-winter.html">
-                        <time datetime="2025-12-25">2025.12.25</time>
-                        <h3>年末年始休業に関するご案内</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="news-article-sns.html">
-                        <time datetime="2025-08-23">2025.08.21</time>
-                        <h3>SNS公式アカウント開設のお知らせ</h3>
-                    </a>
-                </li>
-            </ul>
-            
-            <div class="section-cta" style="margin-top: 50px;">
-                <a href="news-archive.html" class="reason-button">過去のお知らせはこちら &gt;</a>
-            </div>
+        <div class="page-content">
+            <article class="news-article">
+                <header class="news-article-header">
+                    <h1>ゴールデンウィーク休業のお知らせ</h1>
+                    <p class="news-date"><time datetime="2026-04-11">2026年4月11日</time></p>
+                </header>
+
+                <div class="news-body">
+                    <p>誠に勝手ながら、弊所のゴールデンウィーク期間中の営業スケジュールを以下の通りとさせていただきます。</p>
+                    
+                    <h2 style="margin-top: 2em; margin-bottom: 1em; font-size: 1.25rem; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 0.5em;">GWスケジュール</h2>
+                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2em; line-height: 1.8;">
+                        <li><strong>4月29日（祝）</strong>：休業</li>
+                        <li><strong>4月30日（木）・5月1日（金）</strong>：通常営業</li>
+                        <li><strong>5月2日（土）～ 5月6日（祝）</strong>：休業</li>
+                        <li><strong>5月7日（木）</strong>：営業再開</li>
+                    </ul>
+
+                    <h2 style="margin-top: 2em; margin-bottom: 1em; font-size: 1.25rem; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 0.5em;">お問い合わせについて</h2>
+                    <p>休業期間中にいただきましたメールやチャットへのご返信は、翌営業日より順次対応させていただきます。</p>
+                    <p>ご不便をおかけいたしますが、何卒よろしくお願い申し上げます。</p>
+                </div>
+
+                <div class="article-back-link-container">
+                    <a href="news.html" class="reason-button">&lt; お知らせ一覧に戻る</a>
+                </div>
+            </article>
         </div>
     </main>
 
@@ -210,8 +196,8 @@
         overlay.style.width = '100%';
         overlay.style.height = '100%';
         overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        overlay.style.zIndex = '1399';
-        overlay.style.display = 'none';
+        overlay.style.zIndex = '1399'; 
+        overlay.style.display = 'none'; 
         document.body.appendChild(overlay);
 
         if (hamburgerButton && globalNav && overlay) {
@@ -233,8 +219,8 @@
         // --- 追従ボタンの表示・非表示を制御 ---
         const sideButtons = document.querySelector('.side-sticky-buttons');
         const pageTopButton = document.getElementById('page-top-button');
-        const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper'); 
-        const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close'); 
+        const priceCtaWrapper = document.getElementById('sticky-price-cta-wrapper');
+        const priceCtaCloseBtn = document.getElementById('sticky-price-cta-close');
 
         if (sideButtons && pageTopButton && priceCtaWrapper) { 
             window.addEventListener('scroll', () => {
@@ -256,7 +242,7 @@
 
         if(priceCtaCloseBtn && priceCtaWrapper) {
             priceCtaCloseBtn.addEventListener('click', () => {
-                priceCtaWrapper.style.display = 'none';
+                priceCtaWrapper.style.display = 'none'; 
             });
         }
 
@@ -271,7 +257,7 @@
                     }
                 });
             }, {
-                threshold: 0.1
+                threshold: 0.1 
             });
 
             fadeInTargets.forEach(target => {
