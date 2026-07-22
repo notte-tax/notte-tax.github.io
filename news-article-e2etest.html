@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お知らせ - 税理士法人notte</title>
+    <title>システムメンテナンスのお知らせ(社内動作確認テスト) - 税理士法人notte</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" type="image/png">
 
@@ -13,11 +13,10 @@
     <meta property="og:description" content="税理士法人notteからのお知らせ一覧です。" />
     <meta property="og:site_name" content="税理士法人notte" />
     <meta property="og:image" content="https://notte-tax-website.web.app/ogp-image.png" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    </head>
-    <body class="page-news">
 
+    <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
     <header class="header">
     <div class="header-inner">
         <button class="hamburger-button" id="hamburger-button" aria-label="メニューを開く">
@@ -77,38 +76,24 @@
 </div>
 
     <main>
-        <div class="page-header">
-            <h1>お知らせ</h1>
-        </div>
-        <div class="page-content fade-in fade-in-up">
-            <ul class="news-list">
-                <li>
-                    <a href="news-article-e2etest.html">
-                        <time datetime="2026-07-22">2026.07.22</time>
-                        <h3>システムメンテナンスのお知らせ(社内動作確認テスト)</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="news-article-summer.html">
-                        <time datetime="2025-06-08">2025.07.31</time>
-                        <h3>夏季休業に関するご案内</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="news-article-launch.html">
-                        <time datetime="2025-05-20">2025.07.20</time>
-                        <h3>ホームページを公開しました</h3>
-                    </a>
-                </li>
-                 <li>
-                    <a href="news-article-relocation.html">
-                        <time datetime="2025-04-01">2025.01.16</time>
-                        <h3>法人設立のお知らせ</h3>
-                    </a>
-                </li>
-                 </ul>
+        <div class="page-content">
+            <article>
+                <div class="news-article-header fade-in fade-in-up">
+                    <h1>システムメンテナンスのお知らせ(社内動作確認テスト)</h1>
+                    <p class="news-date">2026年7月22日</p>
+                </div>
+                <div class="news-body fade-in fade-in-up">
+                    <p>平素は格別のご高配を賜り、厚く御礼申し上げます。</p>
+                    <p>本記事は、公式サイトのデプロイフロー(新しいOneDrive経由のデプロイ方式)が正しく動作するかを内部で確認するためのテスト記事です。お客様向けの実際のお知らせではありません。</p>
+                    <p>動作確認終了後、本記事は削除されます。</p>
+                    <div class="article-back-link-container">
+                        <a href="news.html" class="reason-button">お知らせ一覧へ戻る</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </main>
+
 
     <section class="pre-footer-contact-section fade-in fade-in-up">
         <div class="pre-footer-wrapper">
@@ -120,19 +105,16 @@
                     </a>
                 </div>
                 <p>〒060-0052<br>北海道札幌市中央区南２条東２丁目１６番地  堀尾ビル</p>
-                <p>電話番号: 090-7251-3756</p>
+                <p>電話番号: [同ページ内テンプレート踏襲・実データはbuild後に他ページ参照]</p>
             </div>
             <div class="pre-footer-col">
                 <h4 class="pre-footer-title">アクセスマップ</h4>
                 <div class="map-container-small">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.134043329485!2d141.3570381752392!3d43.05964829061886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29e33e00c753%3A0x1a92e5182ef7805a!2z56iO55CG5aOr5rOV5Lq6bm90dGU!5e0!3m2!1sja!2sjp!4v1750373566628!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- テスト記事のため地図埋め込みは省略(本番相当の構造確認は既存記事で担保済み) -->
                 </div>
             </div>
             <div class="pre-footer-col contact-col">
                 <h4 class="pre-footer-title">お問い合わせ</h4>
-                <p class="tel-number">
-                    <a href="tel:090-7251-3756">090-7251-3756</a>
-                </p>
                 <p class="reception-time">受付時間：平日9:00～17:00</p>
                 <a href="contact.html" class="reason-button">メールでのお問い合わせ ></a>
             </div>
