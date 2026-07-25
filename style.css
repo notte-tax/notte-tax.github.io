@@ -213,7 +213,7 @@ body {
    =============== */
 /* ▼▼▼【重要】.hero のスタイルを元の状態に戻します ▼▼▼ */
 .hero {
-    background-image: url('hero-background.jpg');
+    background-image: url('images/hero-background.jpg');
     background-size: cover;
     background-position: center 100%;
     background-repeat: no-repeat;
@@ -483,16 +483,16 @@ body {
 /* ▼▼▼ この部分を、下の新しいコードに置き換えてください ▼▼▼ */
 /* =====【最新版】各サービスカードに固有の背景画像を設定 ===== */
 .service-grid .service-card-link:nth-child(1) .service-card {
-    background-image: url('tax.jpg');
+    background-image: url('images/tax.jpg');
 }
 .service-grid .service-card-link:nth-child(2) .service-card {
-    background-image: url('mf.jpg');
+    background-image: url('images/mf.jpg');
 }
 .service-grid .service-card-link:nth-child(3) .service-card {
-    background-image: url('startup.jpg');
+    background-image: url('images/startup.jpg');
 }
 .service-grid .service-card-link:nth-child(4) .service-card {
-    background-image: url('souzoku.jpg');
+    background-image: url('images/souzoku.jpg');
 }
 /* ▲▲▲ ここまでを置き換え ▲▲▲ */
 
@@ -832,16 +832,16 @@ body {
 
 /* --- 各ページ固有の背景画像 --- */
 .page-service-tax .page-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('tax.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/tax.jpg');
 }
 .page-service-mf .page-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('mf.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/mf.jpg');
 }
 .page-service-startup .page-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('startup.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/startup.jpg');
 }
 .page-service-inheritance .page-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('souzoku.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/souzoku.jpg');
 }
 
 .page-content {
@@ -1789,7 +1789,7 @@ a.service-item-link:hover .service-item {
     border-radius: 8px;
     width: 110px;
     height: 110px;
-    background-image: url('background.jpg');
+    background-image: url('images/background.jpg');
     background-size: cover;
     background-position: 50% 50%;
     border: 1px solid #f0f0f0;
@@ -3129,7 +3129,7 @@ html {
     color: white;
     text-align: center;
     /* ▼▼▼ この行の画像パスを変更 ▼▼▼ */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('recruit.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/recruit.jpg');
     /* ▲▲▲ ここまで変更 ▲▲▲ */
     background-size: cover;
     background-position: center;
@@ -4039,37 +4039,37 @@ html {
 /* 各ページ固有の背景画像を指定 */
 /* ... 既存のルールはそのまま ... */
 .page-staff .page-header {
-    background-image: url('staff.jpg');
+    background-image: url('images/staff.jpg');
 }
 
 /* ▼▼▼ このルールを新しく追加 ▼▼▼ */
 .page-fee-simulation .page-header {
-    background-image: url('fee-simulation.jpg'); /* 添付された画像を指定 */
+    background-image: url('images/fee-simulation.jpg'); /* 添付された画像を指定 */
 }
 /* 各ページ固有の背景画像を指定 */
 .page-about .page-header {
-    background-image: url('place.jpg');
+    background-image: url('images/place.jpg');
 }
 .page-news .page-header {
-    background-image: url('annouce.jpg');
+    background-image: url('images/annouce.jpg');
 }
 .page-price .page-header {
-    background-image: url('price.jpg');
+    background-image: url('images/price.jpg');
 }
 .page-recruit .page-header {
-    background-image: url('recruit2.jpg');
+    background-image: url('images/recruit2.jpg');
 }
 .page-services .page-header {
-    background-image: url('service.jpg');
+    background-image: url('images/service.jpg');
 }
 .page-staff .page-header {
-    background-image: url('staff.jpg');
+    background-image: url('images/staff.jpg');
 }
 .page-fee-simulation .page-header {
-    background-image: url('fee-simulation.jpg'); /* 添付された画像を指定 */
+    background-image: url('images/fee-simulation.jpg'); /* 添付された画像を指定 */
 }
 .page-contact .page-header {
-    background-image: url('contact.jpg');
+    background-image: url('images/contact.jpg');
 }
 
 
