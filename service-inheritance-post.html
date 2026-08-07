@@ -25,6 +25,55 @@
     <meta property="og:image" content="https://notte-tax.com/images/ogp-image-v2.jpg" />
     
     <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "相続税はいくらから発生しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "遺産総額が「3,000万円+600万円×法定相続人の数」で計算される基礎控除額を超える場合に発生します。この金額を超えるかどうかの試算だけでも無料で承っております。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "相続税の申告期限はいつまでですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "相続の開始があったことを知った日の翌日から10ヶ月以内です。期限を過ぎると延滞税や特例が使えなくなるリスクがあるため、できるだけ早めのご相談をおすすめします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "相続税の申告は自分で行うこともできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "制度上は可能ですが、土地や非上場株式の評価には専門知識が必要で、誤った評価は税務調査のリスクにつながります。税理士が関与することで「書面添付制度」も活用でき、税務調査のリスクを低減できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "相続財産に不動産がある場合、評価はどうなりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "土地は路線価や倍率方式により評価しますが、形状や利用状況によって評価額を適法に引き下げられる場合があります。現地調査を含めて正確に評価いたします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "相続税申告の費用はどれくらいかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "遺産総額や財産の種類によって異なります。無料の報酬シミュレーションもご用意していますので、まずはそちらをご確認いただくか、お気軽にお問い合わせください。"
+          }
+        }
+      ]
+    }
+    </script>
 <style>
     /* 項目間のスペースを調整 */
     .feature-item:not(:last-child) {
@@ -396,6 +445,57 @@
                 </ol>
             </section>
 
+            <section class="accordion-section fade-in fade-in-up">
+                <h2 class="section-title">よくある質問</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">相続税はいくらから発生しますか？</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>遺産総額が「3,000万円+600万円×法定相続人の数」で計算される基礎控除額を超える場合に発生します。この金額を超えるかどうかの試算だけでも無料で承っております。</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">相続税の申告期限はいつまでですか？</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>相続の開始があったことを知った日の翌日から10ヶ月以内です。期限を過ぎると延滞税や特例が使えなくなるリスクがあるため、できるだけ早めのご相談をおすすめします。</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">相続税の申告は自分で行うこともできますか？</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>制度上は可能ですが、土地や非上場株式の評価には専門知識が必要で、誤った評価は税務調査のリスクにつながります。税理士が関与することで「書面添付制度」も活用でき、税務調査のリスクを低減できます。</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">相続財産に不動産がある場合、評価はどうなりますか？</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>土地は路線価や倍率方式により評価しますが、形状や利用状況によって評価額を適法に引き下げられる場合があります。現地調査を含めて正確に評価いたします。</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">相続税申告の費用はどれくらいかかりますか？</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>遺産総額や財産の種類によって異なります。<a href="fee-simulation-inheritance.html">無料の報酬シミュレーション</a>もご用意していますので、まずはそちらをご確認いただくか、お気軽にお問い合わせください。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="other-service-nav fade-in fade-in-up">
                 <h3>その他の相続サポート</h3>
                 <div class="service-choice-grid">
@@ -580,6 +680,26 @@ if(priceCtaCloseBtn && priceCtaWrapper) {
             observer.observe(target);
         });
     }
+
+    // --- アコーディオン(よくある質問)用のスクリプト ---
+    document.addEventListener('DOMContentLoaded', function () {
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.closest('.accordion-item');
+                const content = item.querySelector('.accordion-content');
+
+                item.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    });
 </script>
 
 </body>
