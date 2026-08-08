@@ -226,6 +226,43 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* 相続用語集 */
+.glossary-list {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 0;
+    list-style: none;
+}
+.glossary-item {
+    display: flex;
+    gap: 30px;
+    padding: 24px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+.glossary-item:last-child {
+    border-bottom: none;
+}
+.glossary-item dt {
+    flex: 0 0 190px;
+    font-weight: bold;
+    color: #1caac3;
+    font-size: 1.05em;
+}
+.glossary-item dd {
+    margin: 0;
+    flex: 1;
+    line-height: 1.9;
+}
+@media (max-width: 768px) {
+    .glossary-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .glossary-item dt {
+        flex: none;
+    }
+}
 </style>
 </head>
 <body class="page-service-inheritance">
@@ -374,6 +411,38 @@
             <p>「配偶者の税額軽減」「小規模宅地等の特例」など、要件を満たせば納税額を大きく抑えられる制度があります。適用要件の判断は専門的な知識が必要なため、専門家にご相談いただくことをおすすめします。</p>
         </div>
     </div>
+</section>
+
+<section class="glossary-section fade-in fade-in-up">
+    <div class="section-title">
+        <h2>相続の用語集</h2>
+    </div>
+    <dl class="glossary-list">
+        <div class="glossary-item">
+            <dt>法定相続人</dt>
+            <dd>民法で定められた、相続人となる人の範囲です。配偶者は常に相続人となり、それ以外は子・直系尊属（父母など）・兄弟姉妹の順に相続人となります。</dd>
+        </div>
+        <div class="glossary-item">
+            <dt>遺産分割協議</dt>
+            <dd>相続人全員で、誰がどの財産をどれだけ相続するかを話し合い、合意する手続きです。合意した内容は「遺産分割協議書」としてまとめ、相続人全員の実印・印鑑証明が必要になります。</dd>
+        </div>
+        <div class="glossary-item">
+            <dt>路線価</dt>
+            <dd>相続税や贈与税の土地評価で使う、道路に面する土地の1㎡あたりの価格です。国税庁が毎年公表しており、土地の形状や利用状況によって評価額を適法に補正できる場合があります。</dd>
+        </div>
+        <div class="glossary-item">
+            <dt>みなし相続財産</dt>
+            <dd>民法上は相続財産ではないものの、相続税の計算上は相続財産とみなして課税対象になるものです。死亡保険金や死亡退職金などが該当し、一定額の非課税枠が設けられています。</dd>
+        </div>
+        <div class="glossary-item">
+            <dt>二次相続</dt>
+            <dd>最初の相続（一次相続。例：父の相続）の後に発生する、次の相続（例：その後の母の相続）のことです。一次相続の遺産分割の仕方によって、二次相続で発生する相続税の総額が変わるため、あわせて見据えた対策が重要です。</dd>
+        </div>
+        <div class="glossary-item">
+            <dt>準確定申告</dt>
+            <dd>亡くなった方の、その年の1月1日から死亡日までの所得について行う所得税の確定申告です。相続の開始があったことを知った日の翌日から4ヶ月以内に、相続人が手続きを行う必要があります。</dd>
+        </div>
+    </dl>
 </section>
 
 <section class="service-flow fade-in fade-in-up">
