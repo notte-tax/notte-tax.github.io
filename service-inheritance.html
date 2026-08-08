@@ -216,6 +216,16 @@
 .voice-placeholder p {
     margin: 0;
 }
+
+/* 基礎知識セクションは4項目のため2列にする(共通の3列グリッドを上書き) */
+.inheritance-basics .merit-points-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
+    .inheritance-basics .merit-points-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 <body class="page-service-inheritance">
@@ -334,6 +344,34 @@
                 <h4>料金への不安を解消する、無料相談と明確な見積</h4>
                 <p>私たちは、お客様が料金に不安を感じたまま、大切なご相談を躊躇されるべきではないと考えています。そのため、当事務所の初回のご相談は、時間や回数に制限なく完全に無料です。まずは、お客様の状況をじっくりとお伺いし、課題の整理と、当事務所がお手伝いできることを明確にご説明します。その上で、必ずご契約前に、詳細な業務内容と料金を記載したお見積書を提示し、ご納得いただけた場合にのみ、業務を開始いたします。料金への不安をゼロにしてから、安心してご依頼ください。</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="inheritance-basics fade-in fade-in-up">
+    <div class="section-title">
+        <h2>相続税の基礎知識</h2>
+    </div>
+    <div class="merit-points-grid">
+        <div class="point-box">
+            <div class="point-icon">🧮</div>
+            <h4><span class="point-number">POINT 1</span>基礎控除額の計算式</h4>
+            <p>「3,000万円＋600万円×法定相続人の数」で計算される基礎控除額を、遺産総額が超える場合に相続税が発生します。この金額を超えるかどうかの試算だけでも無料で承っております。</p>
+        </div>
+        <div class="point-box">
+            <div class="point-icon">📅</div>
+            <h4><span class="point-number">POINT 2</span>申告・納税の期限</h4>
+            <p>相続の開始があったことを知った日の翌日から10ヶ月以内に、申告と納税の両方を済ませる必要があります。期限を過ぎると延滞税や各種特例が使えなくなるリスクがあります。</p>
+        </div>
+        <div class="point-box">
+            <div class="point-icon">⏳</div>
+            <h4><span class="point-number">POINT 3</span>相続放棄・限定承認の期限</h4>
+            <p>借金などを相続したくない場合の「相続放棄」「限定承認」は、相続の開始があったことを知った時から3ヶ月以内に家庭裁判所への申述が必要です。判断に迷う場合は早めのご相談をおすすめします。</p>
+        </div>
+        <div class="point-box">
+            <div class="point-icon">🏠</div>
+            <h4><span class="point-number">POINT 4</span>主な税額軽減・特例</h4>
+            <p>「配偶者の税額軽減」「小規模宅地等の特例」など、要件を満たせば納税額を大きく抑えられる制度があります。適用要件の判断は専門的な知識が必要なため、専門家にご相談いただくことをおすすめします。</p>
         </div>
     </div>
 </section>
