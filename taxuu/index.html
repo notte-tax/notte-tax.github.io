@@ -14,12 +14,46 @@
     --slate:   #5C7079;
     --mist:    #EAF4F6;
 
+    /* 上記6色と同一色のrgb版（透過表現専用。新しい色は追加していない） */
+    --teal-rgb:    28, 170, 195;
+    --ink-rgb:     26, 46, 53;
+    --outline-rgb: 43, 43, 43;
+    --slate-rgb:   92, 112, 121;
+    --mist-rgb:    234, 244, 246;
+
     --font-heading: system-ui, "Hiragino Maru Gothic Pro", "BIZ UDGothic", sans-serif;
     --font-body: system-ui, "Hiragino Maru Gothic Pro", "BIZ UDGothic", sans-serif;
   }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--teal-rgb), 0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(var(--teal-rgb), 0); }
+  }
+  @keyframes bounce-dot {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+  }
 
   body {
     margin: 0;
@@ -43,8 +77,10 @@
 
   /* ---------- Header ---------- */
   header.site-header {
-    background: #fff;
-    border-bottom: 1px solid var(--mist);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgba(var(--mist-rgb), 0.9);
     position: sticky;
     top: 0;
     z-index: 50;
@@ -89,6 +125,7 @@
   nav.site-nav a {
     text-decoration: none;
     color: var(--ink);
+    font-weight: 600;
     padding: 6px 4px;
     border-bottom: 2px solid transparent;
   }
@@ -112,6 +149,26 @@
     gap: 32px;
     align-items: center;
   }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(var(--mist-rgb), 1);
+    border-radius: 999px;
+    padding: 6px 14px 6px 10px;
+    margin: 0 0 14px;
+  }
+  .live-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse-dot 1.8s ease-out infinite;
+  }
   .eyebrow {
     display: inline-block;
     font-size: 13px;
@@ -131,6 +188,9 @@
     margin: 0 0 18px;
     color: var(--ink);
   }
+  h1.hero-title .grad {
+    color: var(--teal);
+  }
   p.hero-lead {
     font-size: 16px;
     color: var(--slate);
@@ -147,24 +207,28 @@
     border-radius: 8px;
     font-family: var(--font-heading);
   }
+  .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+  }
   .btn-primary {
     background: var(--teal);
     color: #fff;
   }
-  .btn-primary:hover { opacity: 0.92; }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
   .btn-ghost {
     background: #fff;
     color: var(--ink);
     border: 1px solid var(--slate);
   }
-  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
 
-  .hero-art { text-align: center; }
+  .hero-art { position: relative; text-align: center; }
   .hero-art img {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
     aspect-ratio: 418 / 484;
+    animation: float 6s ease-in-out infinite;
   }
 
   /* ---------- Section shared ---------- */
@@ -195,8 +259,14 @@
   .audience-card {
     background: #fff;
     border: 1px solid var(--mist);
-    border-radius: 14px;
+    border-top: 3px solid var(--teal);
+    border-radius: 10px;
     padding: 28px 22px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .audience-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--teal);
   }
   .audience-card .tag {
     display: inline-block;
@@ -223,7 +293,7 @@
   /* ---------- What taxuu does ---------- */
   .service-layout {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 40px;
     align-items: center;
   }
@@ -234,27 +304,116 @@
     margin: 0 auto;
     aspect-ratio: 418 / 484;
   }
-  .service-list { list-style: none; margin: 0; padding: 0; }
+
+  /* ---------- Chat mockup (AIスタッフとのやりとり) ---------- */
+  .chat-mock {
+    background: #fff;
+    border: 1px solid var(--mist);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 380px;
+    margin: 0 auto 32px;
+  }
+  .chat-mock-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--mist);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    font-family: var(--font-heading);
+  }
+  .chat-mock-head img { flex: 0 0 auto; }
+  .chat-mock-head span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chat-mock-head .status-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse-dot 1.8s ease-out infinite;
+  }
+  .chat-mock-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--mist);
+  }
+  .chat-row { display: flex; }
+  .chat-row.is-user { justify-content: flex-end; }
+  .chat-bubble {
+    max-width: 82%;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 10px 14px;
+    border-radius: 16px;
+  }
+  .chat-row.is-user .chat-bubble {
+    background: var(--teal);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .chat-row.is-ai .chat-bubble {
+    background: #fff;
+    color: var(--ink);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-typing {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #fff;
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+    padding: 12px 14px;
+  }
+  .chat-typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--slate);
+    animation: bounce-dot 1.2s infinite ease-in-out;
+  }
+  .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+  .service-list { list-style: none; margin: 0; padding: 0; position: relative; }
+  .service-list::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 34px;
+    bottom: 34px;
+    width: 1px;
+    background: var(--mist);
+  }
   .service-list li {
+    position: relative;
     display: flex;
     gap: 16px;
     padding: 18px 0;
-    border-bottom: 1px solid var(--mist);
   }
-  .service-list li:last-child { border-bottom: none; }
   .service-list .num {
     flex: 0 0 auto;
     width: 34px;
     height: 34px;
-    border-radius: 50%;
-    background: var(--teal);
-    color: #fff;
+    border-radius: 8px;
+    background: #fff;
+    border: 2px solid var(--teal);
+    color: var(--teal);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-family: var(--font-heading);
-    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    font-size: 13px;
   }
   .service-list h4 {
     margin: 0 0 4px;
@@ -284,14 +443,12 @@
     font-size: 15px;
     color: var(--ink);
   }
-  .trust-points li::before {
-    content: "";
+  .trust-points .check-icon {
     flex: 0 0 auto;
-    width: 8px;
-    height: 8px;
-    margin-top: 7px;
-    border-radius: 50%;
-    background: var(--teal);
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    color: var(--teal);
   }
   .trust-art { text-align: center; }
   .trust-badge {
@@ -357,13 +514,31 @@
     margin-bottom: 28px;
   }
   .price-card {
+    position: relative;
     background: #fff;
     border: 1px solid var(--mist);
-    border-radius: 16px;
-    padding: 26px 22px;
+    border-radius: 10px;
+    padding: 30px 22px 26px;
+    transition: transform 0.2s ease;
+  }
+  .price-card:hover {
+    transform: translateY(-2px);
   }
   .price-card.is-standard {
     border: 2px solid var(--teal);
+    padding-top: 29px;
+  }
+  .price-card .ribbon {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: var(--teal);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 4px 12px;
+    border-radius: 9px 0 9px 0;
   }
   .price-card .tag {
     display: inline-block;
@@ -412,32 +587,46 @@
   }
   .price-note p { margin: 0 0 8px; }
 
-  /* ---------- FAQ ---------- */
+  /* ---------- FAQ (accordion via <details>) ---------- */
   .faq-list { max-width: 720px; margin: 0 auto; }
   .faq-item {
     border-bottom: 1px solid var(--mist);
-    padding: 20px 0;
+    padding: 4px 0;
   }
   .faq-item:first-child { border-top: 1px solid var(--mist); }
   .faq-q {
     display: flex;
+    align-items: center;
     gap: 10px;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 15px;
     color: var(--ink);
-    margin: 0 0 8px;
+    padding: 16px 4px;
+    cursor: pointer;
+    list-style: none;
   }
+  .faq-q::-webkit-details-marker { display: none; }
   .faq-q .qa-mark {
     color: var(--teal);
     flex: 0 0 auto;
   }
+  .faq-q .chevron {
+    margin-left: auto;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    color: var(--slate);
+    transition: transform 0.25s ease;
+  }
+  .faq-item[open] .faq-q .chevron { transform: rotate(180deg); color: var(--teal); }
   .faq-a {
     display: flex;
     gap: 10px;
     font-size: 14px;
     color: var(--slate);
     margin: 0;
+    padding: 0 4px 18px;
   }
   .faq-a .qa-mark {
     color: var(--slate);
@@ -510,6 +699,47 @@
     .card-grid-3, .price-grid { grid-template-columns: 1fr; }
     h1.hero-title { font-size: 28px; }
   }
+
+  /* ---------- Typography boost (文字サイズ全体拡大) ---------- */
+  body { font-size: 17px; }
+  .brand .brand-name { font-size: 27px; }
+  .brand .brand-sub { font-size: 13px; }
+  nav.site-nav { font-size: 15px; }
+  .live-badge { font-size: 13px; }
+  .eyebrow { font-size: 14px; }
+  h1.hero-title { font-size: 38px; }
+  .hero-inner { grid-template-columns: 1.3fr 0.7fr; }
+  p.hero-lead { font-size: 18px; }
+  .btn { font-size: 16px; }
+  h2.block-title { font-size: 30px; }
+  p.block-lead { font-size: 16px; }
+  .audience-card .tag { font-size: 13px; }
+  .audience-card h3 { font-size: 19px; }
+  .audience-card p { font-size: 15px; }
+  .service-list h4 { font-size: 17px; }
+  .service-list p { font-size: 15px; }
+  .service-list .num { font-size: 16px; }
+  .trust-points li { font-size: 16px; }
+  .trust-badge { font-size: 14px; }
+  .trust-caption { font-size: 14px; }
+  .price-card .tag { font-size: 13px; }
+  .price-card h3 { font-size: 17px; }
+  .price-card .price-target { font-size: 14px; }
+  .price-card .price-amount { font-size: 28px; }
+  .price-card .price-unit { font-size: 13px; }
+  .price-note { font-size: 14px; }
+  .faq-q { font-size: 16px; }
+  .faq-a { font-size: 15px; }
+  section.cta-block h2 { font-size: 30px; }
+  section.cta-block p { font-size: 16px; }
+  section.cta-block .cta-note { font-size: 13px; }
+  .footer-brand { font-size: 17px; }
+  .footer-legal { font-size: 13px; }
+  .chat-mock-head { font-size: 14px; }
+  .chat-bubble { font-size: 14px; }
+  @media (max-width: 860px) {
+    h1.hero-title { font-size: 32px; }
+  }
 </style>
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -551,14 +781,15 @@
 <section class="hero">
   <div class="wrap hero-inner">
     <div class="hero-copy">
+      <span class="live-badge"><span class="dot"></span>AIスタッフ、対応中</span>
       <span class="eyebrow">税理士法人notteの新しいカタチ</span>
-      <h1 class="hero-title">確定申告、<br>taxuu（タクスー）に託しませんか。</h1>
+      <h1 class="hero-title">確定申告、<br><span class="grad">taxuu（タクスー）</span>に託しませんか。</h1>
       <p class="hero-lead">
         taxuu（タクスー）は、フリーランス・副業・小規模個人事業主のために税理士法人notteが立ち上げた税務代理サービスです。
         資料のやりとりはチャットで完結。確定申告書の作成から提出まで、私たちが丸ごと引き受けます。
       </p>
       <div class="cta-group">
-        <a class="btn btn-primary" href="#contact">まずは話を聞いてみる</a>
+        <a class="btn btn-primary" href="#contact">まずは話を聞いてみる →</a>
         <a class="btn btn-ghost" href="#pricing">料金について見る</a>
       </div>
     </div>
@@ -576,17 +807,17 @@
       そんな方の申告を、税理士法人notteが税務代理人として引き受けます。
     </p>
     <div class="card-grid-3">
-      <div class="audience-card">
+      <div class="audience-card reveal">
         <span class="tag">フリーランス</span>
         <h3>本業に集中したい方</h3>
         <p>案件が忙しくなるほど、申告の準備は後回しになりがちです。日々のやりとりはチャットにお任せいただき、本業に時間を使ってください。</p>
       </div>
-      <div class="audience-card">
+      <div class="audience-card reveal">
         <span class="tag">副業</span>
         <h3>本業のかたわらで収入がある方</h3>
         <p>会社員の副業も、一定の条件で確定申告が必要になります。何を準備すればいいか分からない状態からで大丈夫です。</p>
       </div>
-      <div class="audience-card">
+      <div class="audience-card reveal">
         <span class="tag">小規模個人事業主</span>
         <h3>ひとり・少人数で事業をしている方</h3>
         <p>経理担当を雇う規模ではないけれど、申告はきちんとしたい。そんな事業者の方に、税理士法人notteの体制でご対応します。</p>
@@ -598,30 +829,45 @@
 <section class="block alt">
   <div class="wrap service-layout">
     <div class="service-art">
-      <img src="assets/suu_work.svg" alt="実務にあたるtaxuuのAIスタッフ、スーさん" width="220" height="255">
+      <div class="chat-mock reveal">
+        <div class="chat-mock-head">
+          <img src="assets/suu.svg" alt="" width="24" height="24" style="border-radius:50%;">
+          <span>AIスタッフ</span>
+          <span class="status-dot" style="margin-left:auto;"></span>
+        </div>
+        <div class="chat-mock-body">
+          <div class="chat-row is-user"><div class="chat-bubble">経費のレシート、まとめて送りますね</div></div>
+          <div class="chat-row is-ai"><div class="chat-bubble">承知しました！届いた分から仕訳しておきますね。</div></div>
+          <div class="chat-row is-ai"><div class="chat-bubble">そういえば、あと3日で今月分のご確認期限ですよ。</div></div>
+          <div class="chat-row is-ai">
+            <div class="chat-typing"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/suu_work.svg" alt="実務にあたるtaxuuのAIスタッフ、スーさん" width="140" height="162" style="margin:0 auto;">
     </div>
-    <div class="service-copy">
+    <div class="service-copy reveal">
       <h2 class="block-title" style="text-align:left;">taxuuがやること</h2>
       <p class="block-lead" style="text-align:left; margin-left:0;">
         taxuuは、操作するためのツールではありません。「託す」——申告を丸ごと引き受ける税務代理サービスです。
       </p>
       <ul class="service-list">
         <li>
-          <span class="num">1</span>
+          <span class="num">01</span>
           <div>
             <h4>チャットで資料をお預かり</h4>
             <p>売上や支出の記録、口座・カードの履歴などをチャットで共有いただくだけ。フォーマットを整える手間はかかりません。</p>
           </div>
         </li>
         <li>
-          <span class="num">2</span>
+          <span class="num">02</span>
           <div>
             <h4>AIスタッフが実務を担当</h4>
             <p>notteのAIスタッフが仕訳の整理や申告書ドラフトの作成といった実務にあたります。「あと3日ありますよ」といったリマインドもお任せください。</p>
           </div>
         </li>
         <li>
-          <span class="num">3</span>
+          <span class="num">03</span>
           <div>
             <h4>税理士法人notteが最終確認・申告</h4>
             <p>税理士法人notteの税理士が内容を確認し、税務代理人として申告書を提出します。丸投げできる安心感を大事にしています。</p>
@@ -634,13 +880,13 @@
 
 <section class="block">
   <div class="wrap trust-layout">
-    <div class="trust-copy">
+    <div class="trust-copy reveal">
       <h2 class="block-title" style="text-align:left;">安心して託せる理由</h2>
       <ul class="trust-points">
-        <li>taxuuは税理士法人notteが運営する税務代理サービスです。書類の作成だけでなく、税理士法人notteの名前で申告そのものを担います。</li>
-        <li>最終的な確認は、税理士法人notteの税理士が行います。AIスタッフに任せきりにせず、人がチェックする体制です。</li>
-        <li>控除の使える範囲などは状況によって異なります。断定的な金額の約束はせず、「この場合は対象になりそうです」といった形で目安をお伝えします。</li>
-        <li>やりとりはチャット中心。「これ、控除にできそうです」など、担当者としての距離感でご案内します。</li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9"></path></svg><span>taxuuは税理士法人notteが運営する税務代理サービスです。書類の作成だけでなく、税理士法人notteの名前で申告そのものを担います。</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9"></path></svg><span>最終的な確認は、税理士法人notteの税理士が行います。AIスタッフに任せきりにせず、人がチェックする体制です。</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9"></path></svg><span>控除の使える範囲などは状況によって異なります。断定的な金額の約束はせず、「この場合は対象になりそうです」といった形で目安をお伝えします。</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9"></path></svg><span>やりとりはチャット中心。「これ、控除にできそうです」など、担当者としての距離感でご案内します。</span></li>
       </ul>
     </div>
     <div class="trust-art">
@@ -656,19 +902,20 @@
     <h2 class="block-title">料金について</h2>
     <p class="block-lead">確定申告は年1回の手続きのため、年間契約（年額一括・税込）でご案内しています。事業の規模や取引の内容によって金額は変わります。</p>
     <div class="price-grid">
-      <div class="price-card">
+      <div class="price-card reveal">
         <span class="tag">シンプル</span>
         <h3>単一収入・シンプルな申告向け</h3>
         <p class="price-target">収入源がひとつで、取引内容もシンプルな方向け。</p>
         <div class="price-amount">¥29,000〜<span class="price-unit">（税込・年間）</span></div>
       </div>
-      <div class="price-card is-standard">
+      <div class="price-card is-standard reveal">
+        <span class="ribbon">おすすめ</span>
         <span class="tag">スタンダード</span>
         <h3>複数収入源・青色申告向け</h3>
         <p class="price-target">本業＋副業など、収入源が複数ある方や、青色申告での対応を希望する方向け。</p>
         <div class="price-amount">¥58,000〜<span class="price-unit">（税込・年間）</span></div>
       </div>
-      <div class="price-card">
+      <div class="price-card reveal">
         <span class="tag">フル対応</span>
         <h3>複雑な取引・法人化検討向け</h3>
         <p class="price-target">取引の種類が多い、複数事業を営んでいる、法人化を検討している方向け。</p>
@@ -685,22 +932,22 @@
   <div class="wrap">
     <h2 class="block-title">よくある質問</h2>
     <div class="faq-list">
-      <div class="faq-item">
-        <p class="faq-q"><span class="qa-mark">Q.</span> taxuuと税理士法人notteは、どう違うのですか？</p>
+      <details class="faq-item" open>
+        <summary class="faq-q"><span class="qa-mark">Q.</span> taxuuと税理士法人notteは、どう違うのですか？<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
         <p class="faq-a"><span class="qa-mark">A.</span> 同じ税理士法人notteが運営するサービスです。taxuuは、フリーランス・副業・小規模個人事業主の方向けに、AIスタッフとのチャットを中心にした窓口として立ち上げました。申告書の作成・提出は税理士法人notteの税理士が担当します。</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q"><span class="qa-mark">Q.</span> 自分で入力・操作するクラウドツールなのでしょうか？</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="qa-mark">Q.</span> 自分で入力・操作するクラウドツールなのでしょうか？<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
         <p class="faq-a"><span class="qa-mark">A.</span> いいえ、ツールの提供ではありません。taxuuは税務代理サービスです。必要な情報をチャットで共有いただければ、申告に関する作業は私たちが引き受けます。</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q"><span class="qa-mark">Q.</span> どれくらい税金が安くなるか、教えてもらえますか？</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="qa-mark">Q.</span> どれくらい税金が安くなるか、教えてもらえますか？<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
         <p class="faq-a"><span class="qa-mark">A.</span> 状況によって使える控除は異なるため、この場で断定的な金額はお伝えできません。ヒアリングのうえ、対象になりそうな控除の目安をご案内します。</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q"><span class="qa-mark">Q.</span> 対応してもらえる時期はいつ頃ですか？</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="qa-mark">Q.</span> 対応してもらえる時期はいつ頃ですか？<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
         <p class="faq-a"><span class="qa-mark">A.</span> 確定申告のシーズン（例年1月〜3月頃）に限らず、日頃の資料整理からご相談いただけます。申告期限が近い時期ほど、早めのご連絡をお願いしています。</p>
-      </div>
+      </details>
     </div>
   </div>
 </section>
@@ -728,6 +975,29 @@
     </p>
   </div>
 </footer>
+
+<script>
+  var revealTargets = document.querySelectorAll('.reveal');
+  function revealAll() {
+    revealTargets.forEach(function (target) { target.classList.add('is-visible'); });
+  }
+  if (revealTargets.length && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+    revealTargets.forEach(function (target) { revealObserver.observe(target); });
+    /* セーフティネット: 何らかの理由でIntersectionObserverが発火しない環境でも、
+       コンテンツが永久に非表示のままにならないようにする */
+    setTimeout(revealAll, 2500);
+  } else {
+    revealAll();
+  }
+</script>
 
 </body>
 </html>
