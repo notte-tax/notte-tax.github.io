@@ -170,7 +170,51 @@
     }
     /* ページのコンテンツ全体の横幅を広げる */
 .page-service-inheritance .page-content {
-    max-width: 1100px; 
+    max-width: 1100px;
+}
+
+/* ▼▼▼ お客様の声セクション ▼▼▼ */
+.voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.voice-card {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 35px 30px;
+}
+.voice-quote-mark {
+    font-family: Georgia, serif;
+    font-size: 3em;
+    line-height: 1;
+    color: #1caac3;
+    opacity: 0.2;
+    margin-bottom: 10px;
+}
+.voice-text {
+    line-height: 1.9;
+    margin: 0 0 20px;
+}
+.voice-meta {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+    text-align: right;
+    margin: 0;
+}
+.voice-placeholder {
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+    color: #888;
+    text-align: center;
+    padding: 50px 30px;
+}
+.voice-placeholder p {
+    margin: 0;
 }
 </style>
 </head>
@@ -293,6 +337,30 @@
         </div>
     </div>
 </section>
+
+<section class="voice-section fade-in fade-in-up">
+    <div class="section-title">
+        <h2>相続をお任せいただいたお客様の声</h2>
+    </div>
+    <div class="voice-grid">
+        <div class="voice-card voice-placeholder">
+            <p>お客様の声を準備中です。順次公開してまいります。</p>
+        </div>
+    </div>
+</section>
+<!--
+実際のアンケート回答が見つかったら、上のvoice-placeholderカードを
+以下の形式に差し替えてください（差し替え後はvoice-placeholderクラスを削除）:
+
+<div class="voice-card">
+    <div class="voice-quote-mark">"</div>
+    <p class="voice-text">（アンケート回答本文をここに）</p>
+    <p class="voice-meta">（属性表記。例: 60代・札幌市 K.S.様）</p>
+</div>
+
+掲載内容は必ず、掲載同意が取れている範囲（氏名の表記方法・年代/地域の開示可否等）で
+本人確認済みのものに限定すること。
+-->
 
 </div>
 </main>
