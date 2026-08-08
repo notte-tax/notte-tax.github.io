@@ -510,6 +510,7 @@
   .price-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: start;
     gap: 20px;
     margin-bottom: 28px;
   }
@@ -586,6 +587,44 @@
     text-align: center;
   }
   .price-note p { margin: 0 0 8px; }
+
+  .price-card summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .price-card summary::-webkit-details-marker { display: none; }
+  .price-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .price-toggle .chevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.25s ease;
+  }
+  .price-card[open] .price-toggle .chevron { transform: rotate(180deg); }
+  .price-detail {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--mist);
+  }
+  .price-detail .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--mist);
+    font-size: 12.5px;
+  }
+  .price-detail .detail-row:last-child { border-bottom: none; }
+  .price-detail dt { margin: 0; color: var(--slate); flex: 0 0 auto; }
+  .price-detail dd { margin: 0; color: var(--ink); font-weight: 600; text-align: right; }
 
   /* ---------- FAQ (accordion via <details>) ---------- */
   .faq-list { max-width: 720px; margin: 0 auto; }
@@ -902,25 +941,61 @@
     <h2 class="block-title">料金について</h2>
     <p class="block-lead">確定申告は年1回の手続きのため、年間契約（年額一括・税込）でご案内しています。事業の規模や取引の内容によって金額は変わります。</p>
     <div class="price-grid">
-      <div class="price-card reveal">
-        <span class="tag">シンプル</span>
-        <h3>単一収入・シンプルな申告向け</h3>
-        <p class="price-target">収入源がひとつで、取引内容もシンプルな方向け。</p>
-        <div class="price-amount">¥29,000〜<span class="price-unit">（税込・年間）</span></div>
-      </div>
-      <div class="price-card is-standard reveal">
+      <details class="price-card reveal">
+        <summary>
+          <span class="tag">シンプル</span>
+          <h3>単一収入・シンプルな申告向け</h3>
+          <p class="price-target">収入源がひとつで、取引内容もシンプルな方向け。</p>
+          <div class="price-amount">¥29,000〜<span class="price-unit">（税込・年間）</span></div>
+          <span class="price-toggle">詳細を見る<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </summary>
+        <dl class="price-detail">
+          <div class="detail-row"><dt>対応する申告の種類</dt><dd>白色申告・単一収入</dd></div>
+          <div class="detail-row"><dt>チャット対応</dt><dd>営業時間内・基本対応</dd></div>
+          <div class="detail-row"><dt>資料整理・仕訳の支援</dt><dd>基本項目のみ</dd></div>
+          <div class="detail-row"><dt>控除の一次案内</dt><dd>基本項目のみ</dd></div>
+          <div class="detail-row"><dt>法人化のご相談</dt><dd>対象外</dd></div>
+          <div class="detail-row"><dt>税理士による最終確認</dt><dd>全プラン共通</dd></div>
+          <div class="detail-row"><dt>申告書の提出</dt><dd>税理士法人notteが税務代理人として提出</dd></div>
+        </dl>
+      </details>
+      <details class="price-card is-standard reveal">
         <span class="ribbon">おすすめ</span>
-        <span class="tag">スタンダード</span>
-        <h3>複数収入源・青色申告向け</h3>
-        <p class="price-target">本業＋副業など、収入源が複数ある方や、青色申告での対応を希望する方向け。</p>
-        <div class="price-amount">¥58,000〜<span class="price-unit">（税込・年間）</span></div>
-      </div>
-      <div class="price-card reveal">
-        <span class="tag">フル対応</span>
-        <h3>複雑な取引・法人化検討向け</h3>
-        <p class="price-target">取引の種類が多い、複数事業を営んでいる、法人化を検討している方向け。</p>
-        <div class="price-amount">¥98,000〜<span class="price-unit">（税込・年間）</span></div>
-      </div>
+        <summary>
+          <span class="tag">スタンダード</span>
+          <h3>複数収入源・青色申告向け</h3>
+          <p class="price-target">本業＋副業など、収入源が複数ある方や、青色申告での対応を希望する方向け。</p>
+          <div class="price-amount">¥58,000〜<span class="price-unit">（税込・年間）</span></div>
+          <span class="price-toggle">詳細を見る<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </summary>
+        <dl class="price-detail">
+          <div class="detail-row"><dt>対応する申告の種類</dt><dd>青色申告・複数収入源</dd></div>
+          <div class="detail-row"><dt>チャット対応</dt><dd>随時・標準対応</dd></div>
+          <div class="detail-row"><dt>資料整理・仕訳の支援</dt><dd>標準的な範囲まで</dd></div>
+          <div class="detail-row"><dt>控除の一次案内</dt><dd>データ突合で洗い出し</dd></div>
+          <div class="detail-row"><dt>法人化のご相談</dt><dd>対象外</dd></div>
+          <div class="detail-row"><dt>税理士による最終確認</dt><dd>全プラン共通</dd></div>
+          <div class="detail-row"><dt>申告書の提出</dt><dd>税理士法人notteが税務代理人として提出</dd></div>
+        </dl>
+      </details>
+      <details class="price-card reveal">
+        <summary>
+          <span class="tag">フル対応</span>
+          <h3>複雑な取引・法人化検討向け</h3>
+          <p class="price-target">取引の種類が多い、複数事業を営んでいる、法人化を検討している方向け。</p>
+          <div class="price-amount">¥98,000〜<span class="price-unit">（税込・年間）</span></div>
+          <span class="price-toggle">詳細を見る<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </summary>
+        <dl class="price-detail">
+          <div class="detail-row"><dt>対応する申告の種類</dt><dd>複雑な取引・複数事業</dd></div>
+          <div class="detail-row"><dt>チャット対応</dt><dd>随時・優先対応</dd></div>
+          <div class="detail-row"><dt>資料整理・仕訳の支援</dt><dd>複雑な取引を含む範囲まで</dd></div>
+          <div class="detail-row"><dt>控除の一次案内</dt><dd>データ突合で洗い出し</dd></div>
+          <div class="detail-row"><dt>法人化のご相談</dt><dd>対象</dd></div>
+          <div class="detail-row"><dt>税理士による最終確認</dt><dd>全プラン共通</dd></div>
+          <div class="detail-row"><dt>申告書の提出</dt><dd>税理士法人notteが税務代理人として提出</dd></div>
+        </dl>
+      </details>
     </div>
     <div class="price-note">
       <p>「〜」は取引量・書類状況等により加算があり得ることを示します。どのプランが合うか分からない場合も、まずはヒアリングのうえご案内しますので、お気軽にお問い合わせください。</p>
