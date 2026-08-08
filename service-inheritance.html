@@ -362,6 +362,57 @@
 本人確認済みのものに限定すること。
 -->
 
+<section class="accordion-section fade-in fade-in-up">
+    <h2 class="section-title">よくある質問</h2>
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">自分の状況では、どのサポートを利用すればいいのか分かりません。</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+                <p>まずはお気軽にご相談ください。ご状況をヒアリングのうえ、最適なサポートをご案内します。「生前対策」「相続税申告」「贈与税申告」の3つは、上の「サポート一覧」からそれぞれの内容もご確認いただけます。</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">対応エリアは札幌市内だけですか？</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+                <p>事務所は札幌市中央区にありますが、WEB会議システムを活用し全国のお客様に対応しております。オンラインでの初回相談も可能です。</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">相談は本当に無料ですか？</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+                <p>はい。初回のご相談は時間や回数に制限なく完全に無料です。ご契約前には必ず詳細な見積書を提示し、ご納得いただいた場合のみ業務を開始します。</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">相続税がかかるかどうか、まず知りたいのですが。</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+                <p><a href="fee-simulation-inheritance.html">無料の相続報酬シミュレーション</a>で概算をご確認いただけます。まずはそちらをご利用いただくか、お気軽にお問い合わせください。</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">相続税の申告期限が近いのですが、対応してもらえますか？</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+                <p>申告期限は、相続の開始があったことを知った日の翌日から10ヶ月以内です。期限が近いご相談ほど早急な対応が必要になりますので、まずはお電話またはメールでご連絡ください。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 </div>
 </main>
 
@@ -517,6 +568,24 @@
                 observer.observe(target);
             });
         }
+
+        // --- アコーディオン(よくある質問)用のスクリプト ---
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.closest('.accordion-item');
+                const content = item.querySelector('.accordion-content');
+
+                item.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
     </script>
 </body>
 </html>
