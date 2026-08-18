@@ -136,10 +136,10 @@
                         </select>
                     </div>
                     <div class="addon-item">
-                        <label>書面添付制度  ※原則「あり」</label>
+                        <label>ご訪問（1回につき）</label>
                         <div class="radio-group-small">
-                            <input type="radio" name="shomen" value="yes" id="shomen_yes" checked><label for="shomen_yes">あり</label>
-                            <input type="radio" name="shomen" value="no" id="shomen_no"><label for="shomen_no">なし</label>
+                            <input type="radio" name="visit" value="yes" id="visit_yes"><label for="visit_yes">あり</label>
+                            <input type="radio" name="visit" value="no" id="visit_no" checked><label for="visit_no">なし</label>
                         </div>
                     </div>
                     <div class="addon-item">
@@ -183,7 +183,7 @@
             <p class="result-label">合計お見積り額</p>
             <p class="result-value-total" id="inheritance-result-total">¥0</p>
         </div>
-        <p class="results-note">※土地評価（倍率地域）、建物評価は基本報酬に含まれます。その他特殊事情がある場合は別途お見積りいたします。</p>
+        <p class="results-note">※基本報酬には書面添付制度の対応を標準で含みます。土地評価（倍率地域）、建物評価も基本報酬に含まれます。その他特殊事情がある場合は別途お見積りいたします。</p>
     </div>
     <div id="sim-results">
 </div>
@@ -349,7 +349,7 @@ if (inheritanceSimulator) {
     // --- 料金設定 ---
     const INHERITANCE_FEES = {
         base: {
-            5000: 400000, 7000: 450000, 10000: 600000, 15000: 750000, 
+            5000: 260000, 7000: 300000, 10000: 450000, 15000: 750000,
             20000: 1000000, 25000: 1200000, 30000: 1400000, 50000: 2000000, 50001: 0
         },
         addons: {
@@ -357,9 +357,9 @@ if (inheritanceSimulator) {
             unlistedStock: 150000,
             listedStock: 10000,
             bankAccounts: 10000,
-            heir: 50000,
-            shomen: 100000,
-            agreement: 50000,
+            heir: 30000,
+            visit: 10000,
+            agreement: 30000,
             quasiFinal: 50000
         }
     };
@@ -385,7 +385,7 @@ if (inheritanceSimulator) {
         additionalFee += parseInt(document.getElementById('add-bank-accounts').value, 10) * INHERITANCE_FEES.addons.bankAccounts;
         additionalFee += parseInt(document.getElementById('add-heirs').value, 10) * INHERITANCE_FEES.addons.heir;
         
-        if (document.querySelector('input[name="shomen"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.shomen;
+        if (document.querySelector('input[name="visit"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.visit;
         if (document.querySelector('input[name="agreement"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.agreement;
         if (document.querySelector('input[name="quasi"]:checked').value === 'yes') additionalFee += INHERITANCE_FEES.addons.quasiFinal;
         if (document.querySelector('input[name="urgent"]:checked').value === 'yes') additionalFee += baseFee * 0.2;
