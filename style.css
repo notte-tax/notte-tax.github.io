@@ -4293,3 +4293,242 @@ html {
         text-align: center;
     }
 }
+/* ===============================================================
+   カードの上質化（2026-11-07）
+   太い色帯・丸いバッジ・絵文字アイコン・強い影をやめ、
+   細い罫線・小さな角丸・明朝の通し番号で落ち着いた見た目にそろえる。
+   既存の指定は消さず、ここで上書きしている（元に戻すときはこの節を消す）。
+   =============================================================== */
+:root {
+    --card-line: #dfe6e8;
+    --card-ink: #0c2e38;
+    --card-sub: #4a5f66;
+    --card-accent: #1caac3;
+    --card-deep: #0e7a8c;
+    --card-serif: "Cormorant Garamond", "Times New Roman", "Yu Mincho", "游明朝", serif;
+}
+
+/* 共通の器：白地・細い罫線・角丸は小さく・影は最小限 */
+.reason-card,
+.service-item,
+.point-box,
+.stat-item,
+.content-point-box,
+.flow-step-content-wrapper,
+.workflow-list .workflow-box,
+.workflow-diagram .workflow-list .workflow-box,
+.inheritance-tax-section .workflow-list .workflow-box,
+.inheritance-tax-section-after .workflow-list .workflow-box,
+.gift-tax-section .workflow-list .workflow-box {
+    background-color: #ffffff;
+    border: 1px solid var(--card-line);
+    border-radius: 2px;
+    box-shadow: none;
+    position: relative;
+}
+
+/* 薄い色の背景の箱（おすすめ・タブの中身・フェーズ）は、色を淡くし罫線で区切る */
+.service-recommend,
+.feature-content-pane,
+.workflow-phase {
+    background-color: #f7fafb;
+    border: 1px solid var(--card-line);
+    border-radius: 2px;
+}
+
+/* カード上辺の短いアクセント線（太い色帯の代わり） */
+.reason-card::before,
+.service-item::before,
+.point-box::before,
+.stat-item::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    width: 48px;
+    height: 2px;
+    margin-left: -24px;
+    background-color: var(--card-accent);
+}
+.service-item::before { left: 30px; margin-left: 0; }
+
+/* ホバーは浮かせず、罫線の色だけ変える */
+a.service-item-link:hover .service-item,
+.service-card-link:hover .service-card {
+    transform: none;
+}
+a.service-item-link:hover .service-item {
+    border-color: var(--card-accent);
+    box-shadow: none;
+}
+
+/* ---- メリット・ポイントのカード ---- */
+.merit-points-grid { counter-reset: merit; gap: 24px; }
+.point-box {
+    counter-increment: merit;
+    padding: 48px 32px 40px;
+}
+.point-box .point-icon { display: none; }          /* 絵文字アイコンは出さない */
+.point-box::after {                                  /* 代わりに明朝の通し番号 */
+    content: counter(merit, decimal-leading-zero);
+    display: block;
+    order: -1;
+    font-family: var(--card-serif);
+    font-size: 2.6em;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--card-deep);
+    letter-spacing: 0.04em;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+}
+.point-box h4 { margin-top: 44px; font-size: 1.2em; color: var(--card-ink); letter-spacing: 0.04em; }
+.point-box h4 .point-number {
+    font-size: 0.68em;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--card-sub);
+    margin-bottom: 10px;
+}
+.point-box p { color: var(--card-sub); font-size: 0.95em; line-height: 1.95; }
+
+/* ---- 業務フロー（STEP）のカード ---- */
+.workflow-list .workflow-box,
+.workflow-diagram .workflow-list .workflow-box,
+.inheritance-tax-section .workflow-list .workflow-box,
+.inheritance-tax-section-after .workflow-list .workflow-box,
+.gift-tax-section .workflow-list .workflow-box {
+    padding: 32px 40px 32px 40px;
+    margin-bottom: 16px;
+    border-left: 1px solid var(--card-line);
+}
+.workflow-box .workflow-step-number,
+.workflow-diagram .workflow-list .workflow-box .workflow-step-number,
+.inheritance-tax-section .workflow-box .workflow-step-number,
+.inheritance-tax-section-after .workflow-box .workflow-step-number,
+.gift-tax-section .workflow-box .workflow-step-number {
+    background-color: transparent;
+    color: var(--card-deep);
+    padding: 0 0 6px 0;
+    border-radius: 0;
+    border-bottom: 1px solid currentColor;
+    font-family: var(--card-serif);
+    font-size: 0.95em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+}
+/* フローごとの色分けは、番号の色だけに残す */
+.inheritance-tax-section-after .workflow-box .workflow-step-number { color: #6f42c1; }
+.gift-tax-section .workflow-box .workflow-step-number { color: #28a745; }
+.workflow-diagram .workflow-list:nth-of-type(2) .workflow-box .workflow-step-number { color: #c27c00; }
+.workflow-box h4 { font-size: 1.2em; color: var(--card-ink); letter-spacing: 0.03em; }
+.workflow-box p { color: var(--card-sub); font-size: 0.95em; line-height: 1.95; }
+
+/* ---- ご契約までの流れ（STEP 01…）の枠 ---- */
+.flow-step-content-wrapper { padding: 32px 28px; }
+.service-flow .flow-step-number {
+    font-family: var(--card-serif);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--card-deep);
+}
+.service-flow .flow-step-title { font-size: 1.3em; color: var(--card-ink); }
+.service-flow li:not(:last-child)::after {
+    content: "";
+    width: 1px;
+    height: 32px;
+    margin: 16px auto;
+    background-color: var(--card-line);
+}
+
+/* ---- そのほかのカード ---- */
+.reason-card { padding: 40px 32px; }
+.service-item { padding: 36px 32px; }
+.service-item h3 { color: var(--card-ink); letter-spacing: 0.04em; }
+.content-point-box { border-top: 2px solid var(--card-accent); }
+.content-point-box h4 { color: var(--card-deep); letter-spacing: 0.08em; }
+.stat-item .stat-icon { display: none; }             /* 採用ページの数字カードも絵文字を出さない */
+.stat-item { padding: 36px 20px 30px; }
+
+/* ケース2（記帳代行）の黄色い箱も白にそろえ、番号の色だけ残す */
+.workflow-diagram .workflow-list:nth-of-type(2) .workflow-box {
+    background-color: #ffffff;
+    border: 1px solid var(--card-line);
+}
+.workflow-diagram .workflow-list:nth-of-type(2) .workflow-box .workflow-step-number {
+    background-color: transparent;
+    color: #c27c00;
+}
+
+/* カードの中のボタン（選ばれる理由）も、丸いボタンから細い枠のボタンにそろえる */
+.reason-card .reason-button {
+    background-color: transparent;
+    color: var(--card-deep);
+    border: 1px solid var(--card-deep);
+    border-radius: 2px;
+    box-shadow: none;
+    letter-spacing: 0.08em;
+}
+.reason-card .reason-button:hover {
+    background-color: var(--card-deep);
+    color: #ffffff;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ご契約までの流れの矢印：細い線と小さな山形の矢印（↓の代わり） */
+.service-flow li:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 44px;
+    margin: 14px auto;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='44' viewBox='0 0 14 44'%3E%3Cpath d='M7 0V42M1 36L7 42L13 36' fill='none' stroke='%230e7a8c' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat center / 14px 44px;
+}
+
+/* 相続のページの「サポート一覧」カード：絵文字の丸アイコンと指さしをやめ、罫線と「詳しく見る」にする */
+.service-choice-grid { gap: 24px; }
+.service-choice-grid .choice-card {
+    padding: 44px 32px 36px;
+    border: 1px solid var(--card-line);
+    border-radius: 2px;
+    box-shadow: none;
+    transition: border-color 0.3s;
+}
+.service-choice-grid .choice-card::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    width: 48px;
+    height: 2px;
+    margin-left: -24px;
+    background-color: var(--card-accent);
+}
+.service-choice-grid .choice-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--card-accent);
+}
+.service-choice-grid .choice-card-icon { display: none; }
+.service-choice-grid .choice-card-text h3 {
+    font-size: 1.3em;
+    letter-spacing: 0.06em;
+    color: var(--card-ink);
+    margin-bottom: 16px;
+}
+.service-choice-grid .choice-card:hover .choice-card-text h3 { color: var(--card-ink); }
+.service-choice-grid .choice-card-text p { color: var(--card-sub); line-height: 1.95; }
+.service-choice-grid .choice-card-text::after {
+    content: "詳しく見る　→";
+    display: inline-block;
+    margin-top: 24px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    font-size: 0.85em;
+    letter-spacing: 0.12em;
+    color: var(--card-deep);
+}
