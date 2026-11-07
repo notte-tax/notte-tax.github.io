@@ -4758,3 +4758,34 @@ a.service-item-link:focus-visible .service-item h3 { color: var(--card-deep); }
 a.service-item-link:hover .service-item h3::after,
 a.service-item-link:focus-visible .service-item h3::after { transform: translateX(6px); }
 .service-item .service-item-img { transform-origin: center bottom; } /* 拡大しても下の文字にかからない */
+
+/* トップの「代表・岩瀬のnote」：noteのマークを丸の中で大きく見せる */
+.note-content { border-radius: 2px; border-color: var(--card-line); box-shadow: none; transition: border-color 0.3s, box-shadow 0.3s; }
+.note-banner-link:hover .note-content { border-color: var(--card-deep); box-shadow: 0 14px 34px rgba(12, 46, 56, 0.10); }
+.note-logo-area {
+    width: 112px;
+    height: 112px;
+    overflow: hidden;
+    border: 1px solid #9fc9d2;      /* 細い線で、少しだけ色を付ける */
+    background: #ffffff;
+}
+.note-logo-area { position: relative; }
+.note-logo-area .note-logo-img {
+    position: absolute;    /* 画像の白い余白を丸の外へ逃がし、「n」を大きく見せる */
+    top: 50%;
+    left: 50%;
+    width: 104px;
+    max-width: none;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+/* トップのパートナーロゴ：帯の背景を白にして、ロゴ画像の白地とそろえる（白い四角の台紙はやめる） */
+.partner-section { background-color: #ffffff; }
+.partner-section img,
+.partner-logo-link img {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
