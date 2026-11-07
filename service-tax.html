@@ -147,6 +147,11 @@
 <section class="workflow-diagram service-content-detail fade-in fade-in-up">
     <h3>業務フロー（顧問契約）</h3>
 
+    <div class="workflow-tabs" role="tablist" hidden>
+        <button type="button" class="workflow-tab is-active" role="tab" aria-selected="true" data-case="0">会計データをご自身で入力する方<small>（自社記帳）</small></button>
+        <button type="button" class="workflow-tab" role="tab" aria-selected="false" data-case="1">入力を当事務所に任せる方<small>（記帳代行）</small></button>
+    </div>
+
     <h4 class="workflow-pattern-title">ケース1：お客様が会計データを入力する場合（自社記帳）</h4>
     <ol class="workflow-list">
         <li>
@@ -418,6 +423,29 @@
             observer.observe(target);
         });
     }
+</script>
+
+<script>
+// --- 業務フロー：ケース1・2をタブで切り替える（スクリプトが動かない環境では両方そのまま表示） ---
+(function () {
+    const section = document.querySelector('.workflow-diagram');
+    const tabs = section && section.querySelector('.workflow-tabs');
+    if (!tabs) return;
+    const titles = section.querySelectorAll('.workflow-pattern-title');
+    const lists = section.querySelectorAll('.workflow-list');
+    const buttons = tabs.querySelectorAll('.workflow-tab');
+    function show(n) {
+        lists.forEach((l, i) => { l.hidden = i !== n; });
+        buttons.forEach((b, i) => {
+            b.classList.toggle('is-active', i === n);
+            b.setAttribute('aria-selected', i === n ? 'true' : 'false');
+        });
+    }
+    titles.forEach(t => { t.hidden = true; });
+    tabs.hidden = false;
+    buttons.forEach(b => b.addEventListener('click', () => show(Number(b.dataset.case))));
+    show(0);
+})();
 </script>
 
 </body>
