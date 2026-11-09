@@ -264,6 +264,21 @@
         flex: none;
     }
 }
+/* セクションごとに背景を交互に（白／うすい水色）。画面の端まで帯にして、区切りを分かりやすくする */
+.page-service-inheritance .page-content > section[id] {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    border-top: none;
+}
+.page-service-inheritance .page-content > section[id]:nth-of-type(odd) {
+    background-color: #f2f8f9;
+    box-shadow: 0 0 0 100vmax #f2f8f9;
+    clip-path: inset(0 -100vmax);
+}
+.page-service-inheritance .page-content > section#support { margin-top: 60px; }
+.page-service-inheritance .page-content > section#faq { margin-bottom: -40px; }
 </style>
 
 <script type="application/ld+json">
