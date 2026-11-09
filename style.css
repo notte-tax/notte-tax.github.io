@@ -4789,3 +4789,116 @@ a.service-item-link:focus-visible .service-item h3::after { transform: translate
     box-shadow: none;
     border-radius: 0;
 }
+
+/* ===============================================================
+   公式LINE（営業用 @916vetzb）への入口（2026-11-07）
+   =============================================================== */
+/* 右端の縦ボタン：メールの上にLINEを足す */
+.sticky-line-button {
+    display: block;
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 20px 12px;
+    background-color: #06c755;
+    border-radius: 10px 0 0 10px;
+    margin-bottom: 6px;
+    transition: opacity 0.3s;
+}
+.sticky-line-button:hover { opacity: 0.85; }
+.side-sticky-buttons .sticky-line-button svg { margin-bottom: 10px; width: 20px; height: 20px; }
+
+/* お問い合わせページのLINEの欄 */
+.contact-line {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 32px 0 40px;
+    padding: 24px 28px;
+    border: 1px solid var(--card-line);
+    border-left: 3px solid #06c755;
+    border-radius: 2px;
+    background-color: #ffffff;
+    text-align: left;
+}
+.contact-line-text { flex: 1; }
+.contact-line-title { margin: 0 0 6px; font-weight: bold; color: var(--card-ink); letter-spacing: 0.04em; }
+.contact-line-text p { margin: 0 0 14px; line-height: 1.8; font-size: 0.95em; color: var(--card-sub); }
+.contact-line-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #06c755;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    transition: opacity 0.3s;
+}
+.contact-line-button:hover { opacity: 0.85; }
+.contact-line-qr { width: 140px; height: 140px; flex-shrink: 0; }
+@media (max-width: 768px) {
+    .contact-line { flex-direction: column; align-items: stretch; gap: 0; padding: 20px; }
+    .contact-line-button { display: block; text-align: center; }
+    .contact-line-qr { display: none; }   /* スマホではQRは読めないので出さない */
+}
+/* 右端の縦ボタンが2つになったので、画面の縦の真ん中にそろえ、少しコンパクトにする */
+.side-sticky-buttons { top: 50%; }
+.sticky-line-button,
+.sticky-mail-button { padding: 16px 11px; font-size: 0.92em; }
+.sticky-line-button { margin-bottom: 4px; }
+.side-sticky-buttons svg,
+.side-sticky-buttons .sticky-line-button svg { width: 18px; height: 18px; margin-bottom: 8px; }
+/* お問い合わせページのLINEの欄：使い方の3ステップ */
+.contact-line-steps {
+    list-style: none;
+    counter-reset: lstep;
+    margin: 0 0 18px;
+    padding: 0;
+}
+.contact-line-steps li {
+    counter-increment: lstep;
+    position: relative;
+    padding: 6px 0 6px 40px;
+    font-size: 0.92em;
+    line-height: 1.75;
+    color: var(--card-sub);
+}
+.contact-line-steps li::before {
+    content: counter(lstep);
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #06c755;
+    color: #ffffff;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: center;
+}
+.contact-line-steps strong { color: var(--card-ink); }
+.contact-line-title { margin-bottom: 10px; }
+
+/* フッターのXのロゴは、ほかのアイコンより一回り小さく見えるよう高さを調整 */
+.footer-social img.footer-x {   /* フッターは暗い背景なので、noteのアイコンと同じく白い角丸の台に載せる */
+    height: 35px;
+    width: 35px;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+/* フッター前「お問い合わせ」：メールの下にLINEのボタン（LINEの緑） */
+.pre-footer-col.contact-col .pre-footer-line-button {
+    margin-top: 12px;
+    background-color: #06c755;
+}
+.pre-footer-col.contact-col .pre-footer-line-button:hover {
+    background-color: #05a647;
+}
