@@ -207,14 +207,31 @@
     text-align: right;
     margin: 0;
 }
-.voice-photo {
+.voice-card-photo {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 36px;
+    align-items: center;
+}
+.voice-photos {
+    display: flex;
+    gap: 14px;
+}
+.voice-photos a { flex: 1; display: block; transition: transform 0.3s; }
+.voice-photos a:nth-child(1) { transform: rotate(-2deg); }
+.voice-photos a:nth-child(2) { transform: rotate(1.5deg); margin-top: 18px; }
+.voice-photos a:hover { transform: rotate(0) scale(1.03); }
+.voice-photos img {
     display: block;
     width: 100%;
     height: auto;
-    border: 1px solid #e8e8e8;
-    border-radius: 6px;
-    margin: 0 0 20px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    background: #fff;
+}
+.voice-photo-note { font-size: 0.78em; color: #888; margin: 14px 0 0; text-align: right; }
+@media (max-width: 768px) {
+    .voice-card-photo { grid-template-columns: 1fr; gap: 24px; }
 }
 .voice-rating {
     font-size: 0.85em;
@@ -565,11 +582,18 @@
         <h2>相続をお任せいただいたお客様の声</h2>
     </div>
     <div class="voice-grid">
-        <div class="voice-card">
-            <img class="voice-photo" src="images/voice-inheritance-1.jpg" alt="アンケートの手書きの回答「たくさん資料を用意してくださり、わかりやすく説明してくれました。」" loading="lazy" width="942" height="187">
-            <p class="voice-text">たくさん資料を用意してくださり、わかりやすく説明してくれました。特に不満はなく、満足しております。</p>
-            <p class="voice-rating">担当者の対応：4項目すべて「満足」／ご友人・知人に「ぜひ紹介したい」</p>
-            <p class="voice-meta">相続税申告のお客様　S.S.様</p>
+        <div class="voice-card voice-card-photo">
+            <div class="voice-photos">
+                <a href="images/voice-inheritance-1-p1.jpg" target="_blank" rel="noopener"><img src="images/voice-inheritance-1-p1.jpg" alt="相続税申告完了に伴うアンケート（表面）：担当者の対応は4項目すべて「満足」" loading="lazy" width="900" height="1160"></a>
+                <a href="images/voice-inheritance-1-p2.jpg" target="_blank" rel="noopener"><img src="images/voice-inheritance-1-p2.jpg" alt="アンケート（裏面）：たくさん資料を用意してくださり、わかりやすく説明してくれました。特に不満はなく、満足しております。" loading="lazy" width="900" height="1123"></a>
+            </div>
+            <div class="voice-body">
+                <div class="voice-quote-mark">"</div>
+                <p class="voice-text">たくさん資料を用意してくださり、わかりやすく説明してくれました。特に不満はなく、満足しております。</p>
+                <p class="voice-rating">担当者の対応：4項目すべて「満足」／ご友人・知人に「ぜひ紹介したい」</p>
+                <p class="voice-meta">相続税申告のお客様　S.S.様</p>
+                <p class="voice-photo-note">実際にいただいたアンケートです（お名前は伏せています）。画像を押すと大きく表示します。</p>
+            </div>
         </div>
     </div>
 </section>
