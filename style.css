@@ -4911,3 +4911,5 @@ a.service-item-link:focus-visible .service-item h3::after { transform: translate
     padding-right: 0;
     text-align: center;
 }
+/* 右端のLINEの縦ボタン：英字の「LINE」も寝かせず、1文字ずつ立てて並べる */
+.sticky-line-button span { text-orientation: upright; }
