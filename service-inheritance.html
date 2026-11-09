@@ -264,21 +264,6 @@
         flex: none;
     }
 }
-/* セクションごとに背景を交互に（白／うすい水色）。画面の端まで帯にして、区切りを分かりやすくする */
-.page-service-inheritance .page-content > section[id] {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 72px;
-    padding-bottom: 72px;
-    border-top: none;
-}
-.page-service-inheritance .page-content > section[id]:nth-of-type(odd) {
-    background-color: #f2f8f9;
-    box-shadow: 0 0 0 100vmax #f2f8f9;
-    clip-path: inset(0 -100vmax);
-}
-.page-service-inheritance .page-content > section#support { margin-top: 60px; }
-.page-service-inheritance .page-content > section#faq { margin-bottom: -40px; }
 </style>
 
 <script type="application/ld+json">
@@ -348,7 +333,7 @@
         <h1>はじめての相続税申告を、最後までおまかせください。</h1>
     </div>
 
-    <div class="page-content">
+    <div class="page-content section-bands">
 
         <section class="service-summary fade-in fade-in-up">
             <h2>年間20件以上の資産税案件を担当する代表が、必ず直接担当します。</h2>

@@ -4913,3 +4913,28 @@ a.service-item-link:focus-visible .service-item h3::after { transform: translate
 }
 /* 右端のLINEの縦ボタン：英字の「LINE」も寝かせず、1文字ずつ立てて並べる */
 .sticky-line-button span { text-orientation: upright; }
+
+/* ===============================================================
+   セクションの帯（2026-11-09）：白とうすい水色を交互にして区切りを分かりやすくする
+   page-content に section-bands を付けたページで効く。帯の色はトップページの帯とそろえる
+   =============================================================== */
+:root { --band-bg: #f2f8f9; }
+body .page-content.section-bands > section:nth-of-type(n+2) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    border-top: none;
+}
+body .page-content.section-bands > section:nth-of-type(2) { margin-top: 60px; }
+body .page-content.section-bands > section:last-of-type { margin-bottom: -40px; }
+body .page-content.section-bands > section:nth-of-type(2n+3) {
+    background-color: var(--band-bg);
+    box-shadow: 0 0 0 100vmax var(--band-bg);
+    clip-path: inset(0 -100vmax);
+}
+/* よくある質問は自前の灰色をやめ、並び順の白／水色に従う */
+body .page-content.section-bands > section.accordion-section:nth-of-type(2n+2) { background-color: transparent; }
+/* トップページの帯（サービス内容・新しい取り組み）も同じ水色に */
+.home-services-section,
+.new-features-section { background-color: var(--band-bg); }
