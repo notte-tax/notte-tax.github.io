@@ -247,6 +247,18 @@
     box-sizing: border-box;
 }
 .voice-track:has(> .voice-card:only-child) { justify-content: center; }
+/* 1件だけのときは、写真と文を横に並べた横長のカードにする（2件以上でスライドに切り替わる） */
+.voice-track > .voice-card-photo:only-child {
+    flex-basis: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 36px;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .voice-track > .voice-card-photo:only-child { grid-template-columns: 1fr; gap: 22px; }
+}
 .voice-nav {
     position: absolute;
     top: 45%;
