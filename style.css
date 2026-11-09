@@ -4935,6 +4935,9 @@ body .page-content.section-bands > section:nth-of-type(2n+3) {
 }
 /* よくある質問は自前の灰色をやめ、並び順の白／水色に従う */
 body .page-content.section-bands > section.accordion-section:nth-of-type(2n+2) { background-color: transparent; }
-/* トップページの帯（サービス内容・新しい取り組み）も同じ水色に */
-.home-services-section,
-.new-features-section { background-color: var(--band-bg); }
+/* トップページ：パートナー（白）→選ばれる理由（水色）→当事務所の強み（白）→サービス内容（水色）→お知らせ（白）→note（水色）の交互 */
+body.home .reasons-section,
+body.home .home-services-section,
+body.home .note-section { background-color: var(--band-bg); }
+body.home .new-features-section,
+body.home .home-news-section { background-color: #ffffff; }
