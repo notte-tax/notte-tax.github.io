@@ -3072,6 +3072,23 @@ html {
     transform: scale(1.6); /* ロゴを1.2倍に拡大してバランスを取る */
 }
 
+/* ===== ロゴの帯：使っている道具のロゴを同じ高さで横一列に ===== */
+.tool-logos { gap: 20px 40px; }
+.tool-logos .partner-logo-link { width: auto; height: 28px; }
+.tool-logos .partner-logo-link img { height: 28px; width: auto; max-width: none; }
+#freee-logo, #freee-logo img { height: 38px; } /* 線が細いロゴなので少し大きく */
+#gw-logo, #gw-logo img { height: 34px; }       /* 画像に余白があるので少し大きく */
+#mf-logo, #mf-logo img { height: 24px; }       /* 横に長いロゴなので少し小さく */
+#gmo-bank-logo, #gmo-bank-logo img { height: 20px; }
+@media (max-width: 600px) {
+    .tool-logos { gap: 18px 28px; }
+    .tool-logos .partner-logo-link, .tool-logos .partner-logo-link img { height: 22px; }
+    #freee-logo, #freee-logo img { height: 30px; }
+    #gw-logo, #gw-logo img { height: 26px; }
+    #mf-logo, #mf-logo img { height: 19px; }
+    #gmo-bank-logo, #gmo-bank-logo img { height: 16px; }
+}
+
 /* ===== 相続関連詳細ページのヘッダー画像 ===== */
 
 /* ヘッダー画像に共通のスタイル */
@@ -4935,6 +4952,11 @@ body .page-content.section-bands > section:nth-of-type(2n+3) {
 }
 /* よくある質問は自前の灰色をやめ、並び順の白／水色に従う */
 body .page-content.section-bands > section.accordion-section:nth-of-type(2n+2) { background-color: transparent; }
+/* 「こんな方におすすめです」のカードは、下の水色の帯とくっつかないよう白い余白を空ける */
+body .page-content.section-bands > section.service-recommend { margin-bottom: 72px; padding: 48px 40px; }
+@media (max-width: 600px) {
+    body .page-content.section-bands > section.service-recommend { margin-bottom: 48px; padding: 32px 20px; }
+}
 /* トップページ：パートナー（白）→選ばれる理由（水色）→当事務所の強み（白）→サービス内容（水色）→お知らせ（白）→note（水色）の交互 */
 body.home .reasons-section,
 body.home .home-services-section,
